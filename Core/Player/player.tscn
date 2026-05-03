@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://vwdxliu34di4"]
+
+[ext_resource type="Script" uid="uid://dlgwyirp2owi2" path="res://Core/Player/player.gd" id="1_4f62b"]
+[ext_resource type="Texture2D" uid="uid://dhnh3fj4jwjjr" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterIdle.png" id="1_so0u2"]
+[ext_resource type="Texture2D" uid="uid://cuflxsin3cyxj" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterSlash.png" id="3_jf5bi"]
+[ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="4_jf5bi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfjle"]
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jf5bi"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf5bi"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imt68"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(34, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uhok"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(68, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46g0b"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(102, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yj4d"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(136, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ng65"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(170, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx3fm"]
+atlas = ExtResource("1_so0u2")
+region = Rect2(204, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4kh"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toill"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(34, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meipa"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(68, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4c6u"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(102, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mpwt"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(136, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5pk8"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(170, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m68dj"]
+atlas = ExtResource("3_jf5bi")
+region = Rect2(204, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdipi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf5bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imt68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uhok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46g0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yj4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ng65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx3fm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4kh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toill")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meipa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4c6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mpwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5pk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m68dj")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 20.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=2127532797]
+collision_mask = 32
+script = ExtResource("1_4f62b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=360737330]
+shape = SubResource("CircleShape2D_bfjle")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=727821661]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=504613595]
+position = Vector2(0, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jf5bi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1191709835]
+position = Vector2(0, -3)
+scale = Vector2(0.78125, 0.78125)
+sprite_frames = SubResource("SpriteFrames_jdipi")
+animation = &"idle"
+frame_progress = 0.59947556
+
+[node name="HealthComponent" parent="." unique_id=543719739 instance=ExtResource("4_jf5bi")]
+
+[node name="BallSpawn" type="Marker2D" parent="." unique_id=636529056]
+position = Vector2(0, -15)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

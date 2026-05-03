@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cagrg0efsct2m"]
+
+[ext_resource type="Script" uid="uid://yxn84844qhjf" path="res://Levels/base_level.gd" id="1_n4mxg"]
+[ext_resource type="PackedScene" uid="uid://t3os7yrjh3fx" path="res://Resources/Maps/MainMap/MainMap.tscn" id="1_ujkqx"]
+[ext_resource type="PackedScene" uid="uid://dfbhl0114hugx" path="res://UI/LevelUI/level_complete_ui.tscn" id="2_3vydx"]
+
+[node name="BaseLevel" type="Node2D" unique_id=181910146]
+script = ExtResource("1_n4mxg")
+
+[node name="MainMap" parent="." unique_id=1927318716 instance=ExtResource("1_ujkqx")]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=500221723]
+
+[node name="LevelCompleteUI" parent="." unique_id=1829127618 instance=ExtResource("2_3vydx")]
+visible = false
+offset_left = 161.0
+offset_top = 85.0
+offset_right = 161.0
+offset_bottom = 85.0

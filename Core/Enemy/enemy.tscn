@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://cwamujttsxgvh"]
+
+[ext_resource type="Script" uid="uid://ccghyla6xh64f" path="res://Core/Enemy/scripts/enemy.gd" id="1_ah4ou"]
+[ext_resource type="Texture2D" uid="uid://bgwtwy0ctl75t" path="res://Core/Enemy/art/smallKnightHead.png" id="1_apucl"]
+[ext_resource type="Shader" uid="uid://bcjm72npoebtv" path="res://Core/Enemy/art/enemy.gdshader" id="2_1y6qf"]
+[ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="3_1coru"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1coru"]
+shader = ExtResource("2_1y6qf")
+shader_parameter/flash_color = Color(1, 0.100000024, 0.100000024, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah4ou"]
+size = Vector2(12, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1coru"]
+size = Vector2(14, 18)
+
+[sub_resource type="Animation" id="Animation_1y6qf"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:instance_shader_parameters/flash_percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pqhtm"]
+resource_name = "hitFlash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:instance_shader_parameters/flash_percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.17453292, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ucym"]
+_data = {
+&"RESET": SubResource("Animation_1y6qf"),
+&"hitFlash": SubResource("Animation_pqhtm")
+}
+
+[sub_resource type="Animation" id="Animation_5ucym"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Item:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Item:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ufmk8"]
+resource_name = "dropItem"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Item:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, 4), Vector2(-6, 0), Vector2(-6, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Item:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.16580628, -1.3229595]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Item:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2hg5x"]
+_data = {
+&"RESET": SubResource("Animation_5ucym"),
+&"dropItem": SubResource("Animation_ufmk8")
+}
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2094694508 groups=["Enemies"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_ah4ou")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234854930]
+material = SubResource("ShaderMaterial_1coru")
+instance_shader_parameters/flash_percentage = 0.0
+texture = ExtResource("1_apucl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663796793]
+shape = SubResource("RectangleShape2D_ah4ou")
+
+[node name="Item" type="Sprite2D" parent="." unique_id=1409613477]
+position = Vector2(-5, 4)
+
+[node name="HealthComponent" parent="." unique_id=543719739 instance=ExtResource("3_1coru")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=132584532]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1885381549]
+shape = SubResource("RectangleShape2D_1coru")
+
+[node name="BodyAnimation" type="AnimationPlayer" parent="." unique_id=1730735957]
+libraries/ = SubResource("AnimationLibrary_5ucym")
+
+[node name="ItemAnimation" type="AnimationPlayer" parent="." unique_id=124670308]
+libraries/ = SubResource("AnimationLibrary_2hg5x")
+
+[connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

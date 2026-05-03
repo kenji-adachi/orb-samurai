@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://t3os7yrjh3fx"]
+
+[ext_resource type="Texture2D" uid="uid://c117evlafun26" path="res://Resources/Maps/MainMap/CastleInnerFieldMap.png" id="1_31560"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31560"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31560"]
+size = Vector2(16, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew0vm"]
+size = Vector2(16, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjp05"]
+size = Vector2(336, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82075"]
+size = Vector2(16, 22)
+
+[node name="MainMap" type="Node2D" unique_id=1927318716]
+z_index = -5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1408471422]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_31560")
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1931114434]
+collision_layer = 4
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_31560")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1140031457]
+position = Vector2(0, 84)
+shape = SubResource("RectangleShape2D_31560")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=885071648]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=588471914]
+position = Vector2(320, 84)
+shape = SubResource("RectangleShape2D_ew0vm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1954004358]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1768699177]
+position = Vector2(160, -0.5)
+shape = SubResource("RectangleShape2D_cjp05")
+
+[node name="playerBouinds" type="StaticBody2D" parent="." unique_id=515558510]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerBouinds" unique_id=1779872165]
+position = Vector2(-4, 169)
+shape = SubResource("RectangleShape2D_82075")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerBouinds" unique_id=1126976751]
+position = Vector2(324, 169)
+shape = SubResource("RectangleShape2D_82075")

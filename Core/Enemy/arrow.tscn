@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chchw4pj4t7e5"]
+
+[ext_resource type="Script" uid="uid://3yo15hug2hvt" path="res://Core/Enemy/scripts/arrow.gd" id="1_e6k8p"]
+[ext_resource type="Texture2D" uid="uid://uow6csxoi76u" path="res://Core/Enemy/art/tinyArrow.png" id="2_6b4se"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5r7q"]
+size = Vector2(5, 10)
+
+[node name="Arrow" type="CharacterBody2D" unique_id=1832266786]
+z_index = 3
+collision_layer = 128
+script = ExtResource("1_e6k8p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2054409232]
+texture = ExtResource("2_6b4se")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1230270107]
+shape = SubResource("RectangleShape2D_j5r7q")

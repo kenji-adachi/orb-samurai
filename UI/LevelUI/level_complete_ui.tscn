@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dfbhl0114hugx"]
+
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="1_3jrnf"]
+[ext_resource type="Script" uid="uid://1h3h75y4p6oq" path="res://UI/LevelUI/level_complete_ui.gd" id="1_5u10e"]
+
+[node name="LevelCompleteUI" type="Control" unique_id=1829127618]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3jrnf")
+script = ExtResource("1_5u10e")
+
+[node name="NextLevelButton" type="Button" parent="." unique_id=508311671]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = 9.0
+offset_right = 49.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEXT LEVEL"
+
+[node name="LevelCompleteLabel" type="Label" parent="." unique_id=272306271]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -31.0
+offset_right = 64.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEVEL COMPLETED"
+
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

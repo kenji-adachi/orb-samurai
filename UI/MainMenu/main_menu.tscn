@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://clxr6cidxhp8r"]
+
+[ext_resource type="Script" uid="uid://dytu5km7lgdbr" path="res://UI/MainMenu/main_menu.gd" id="1_h8rmy"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="1_iyy2y"]
+[ext_resource type="Texture2D" uid="uid://hm44i0pl0aij" path="res://UI/MainMenu/SamuraiMainMenuBackgroundNonAnimated.png" id="2_iyy2y"]
+[ext_resource type="Texture2D" uid="uid://bsrb141u3qb52" path="res://UI/MainMenu/SamuraiMainMenuBackgroundOrbAnimation.png" id="3_trkrl"]
+[ext_resource type="Texture2D" uid="uid://mrangoyiq38x" path="res://UI/MainMenu/SamuraiMainMenuBackgroundFlagAnimation.png" id="4_bddxb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iau2q"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbebc"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0e1r"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejg71"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnp6m"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euymq"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d5va"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(1920, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e3uo"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(2240, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h8a5"]
+atlas = ExtResource("3_trkrl")
+region = Rect2(2560, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xron6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iau2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbebc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0e1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejg71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnp6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euymq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d5va")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e3uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h8a5")
+}],
+"loop": true,
+"name": &"orb",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwn5o"]
+atlas = ExtResource("4_bddxb")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k0c3"]
+atlas = ExtResource("4_bddxb")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kjws"]
+atlas = ExtResource("4_bddxb")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myei6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwn5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k0c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kjws")
+}],
+"loop": true,
+"name": &"flags",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=319366454]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iyy2y")
+script = ExtResource("1_h8rmy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=50793661]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_iyy2y")
+
+[node name="OrbAnimation" type="AnimatedSprite2D" parent="." unique_id=1262626141]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_xron6")
+animation = &"orb"
+frame = 2
+frame_progress = 0.0024151339
+
+[node name="FlagAnimation" type="AnimatedSprite2D" parent="." unique_id=1080086605]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_myei6")
+animation = &"flags"
+frame = 2
+frame_progress = 0.64668965
+
+[node name="StartGameButton" type="Button" parent="." unique_id=2061615569]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 122.0
+offset_right = 98.0
+offset_bottom = 149.0
+text = "START GAME"
+
+[node name="OptionsButton" type="Button" parent="." unique_id=1884028364]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 151.0
+offset_right = 68.0
+offset_bottom = 178.0
+text = "OPTIONS"
+
+[node name="QuitGameButton" type="Button" parent="." unique_id=2022870727]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 151.0
+offset_right = 317.0
+offset_bottom = 178.0
+text = "QUIT GAME"
+
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="QuitGameButton" to="." method="_on_quit_game_button_pressed"]

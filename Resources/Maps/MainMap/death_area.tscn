@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://csetgrcc6eo4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whvk0"]
+size = Vector2(344, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo7mv"]
+size = Vector2(12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpxnv"]
+size = Vector2(12, 20)
+
+[node name="DeathArea" type="Area2D" unique_id=1489501357]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443695290]
+position = Vector2(160, 188)
+shape = SubResource("RectangleShape2D_whvk0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1675992945]
+position = Vector2(-6, 170)
+shape = SubResource("RectangleShape2D_xo7mv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=715700577]
+position = Vector2(326, 170)
+shape = SubResource("RectangleShape2D_hpxnv")

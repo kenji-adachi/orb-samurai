@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dn1eurwvyiad8"]
+
+[ext_resource type="Script" uid="uid://bdcm8apeh5hrr" path="res://Testing/testPlay.gd" id="1_ikni7"]
+[ext_resource type="PackedScene" uid="uid://t3os7yrjh3fx" path="res://Resources/Maps/MainMap/MainMap.tscn" id="2_d1hia"]
+[ext_resource type="PackedScene" uid="uid://vwdxliu34di4" path="res://Core/Player/player.tscn" id="3_3mu6p"]
+[ext_resource type="PackedScene" uid="uid://bqlay5gsp6w3o" path="res://UI/crosshair2D/crosshair.tscn" id="4_ag1uj"]
+[ext_resource type="Texture2D" uid="uid://cmh6gxig3pm4f" path="res://Resources/Asssets/crosshairAimLine.png" id="5_usrc7"]
+[ext_resource type="PackedScene" uid="uid://csetgrcc6eo4e" path="res://Resources/Maps/MainMap/death_area.tscn" id="6_he0gv"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="7_r2gyi"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="8_wtqc7"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="9_8qkaj"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="10_p3epq"]
+
+[node name="Main" type="Node2D" unique_id=657274151]
+script = ExtResource("1_ikni7")
+
+[node name="MainMap" parent="." unique_id=1927318716 instance=ExtResource("2_d1hia")]
+
+[node name="Player" parent="." unique_id=2127532797 instance=ExtResource("3_3mu6p")]
+position = Vector2(160, 176)
+playerSpeed = 150
+
+[node name="Crosshair" parent="." unique_id=775337758 instance=ExtResource("4_ag1uj")]
+z_index = 5
+position = Vector2(161, 92)
+
+[node name="AimLine" type="Line2D" parent="." unique_id=1999594804]
+z_index = 4
+width = 1.0
+default_color = Color(1, 1, 1, 0.54509807)
+texture = ExtResource("5_usrc7")
+texture_mode = 1
+
+[node name="DeathArea" parent="." unique_id=1489501357 instance=ExtResource("6_he0gv")]
+
+[node name="Enemy2" parent="." unique_id=1163758013 instance=ExtResource("7_r2gyi")]
+position = Vector2(139, 59)
+
+[node name="Enemy5" parent="." unique_id=559414258 instance=ExtResource("7_r2gyi")]
+position = Vector2(181, 59)
+
+[node name="ShieldEnemy" parent="." unique_id=1170676422 instance=ExtResource("8_wtqc7")]
+position = Vector2(153, 77)
+
+[node name="ShieldEnemy2" parent="." unique_id=1482410060 instance=ExtResource("8_wtqc7")]
+position = Vector2(167, 77)
+
+[node name="SwordEnemy" parent="." unique_id=1274057070 instance=ExtResource("9_8qkaj")]
+position = Vector2(125, 59)
+
+[node name="SwordEnemy2" parent="." unique_id=1103813691 instance=ExtResource("9_8qkaj")]
+position = Vector2(195, 59)
+
+[node name="ShieldEnemy3" parent="." unique_id=2094694508 instance=ExtResource("8_wtqc7")]
+position = Vector2(139, 77)
+
+[node name="ShieldEnemy4" parent="." unique_id=368270332 instance=ExtResource("8_wtqc7")]
+position = Vector2(181, 77)
+
+[node name="BowEnemy" parent="." unique_id=207749391 instance=ExtResource("10_p3epq")]
+position = Vector2(153, 59)
+
+[node name="BowEnemy3" parent="." unique_id=2097149502 instance=ExtResource("10_p3epq")]
+position = Vector2(181, 41)
+
+[node name="BowEnemy4" parent="." unique_id=664621201 instance=ExtResource("10_p3epq")]
+position = Vector2(139, 41)
+
+[node name="BowEnemy2" parent="." unique_id=806953777 instance=ExtResource("10_p3epq")]
+position = Vector2(167, 59)
+
+[connection signal="slashing" from="Player" to="." method="_on_player_slashing"]
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

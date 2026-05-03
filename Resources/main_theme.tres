@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://bvj5cx2jg5kee"]
+
+[ext_resource type="FontFile" uid="uid://bie4ii14xjpi8" path="res://Resources/Fonts/Harmonic.ttf" id="1_rpoj5"]
+
+[resource]
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 18
+Button/fonts/font = ExtResource("1_rpoj5")
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 18
+Label/fonts/font = ExtResource("1_rpoj5")

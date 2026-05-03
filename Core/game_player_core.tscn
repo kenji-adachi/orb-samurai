@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c6uo7r5ra3ok2"]
+
+[ext_resource type="PackedScene" uid="uid://vwdxliu34di4" path="res://Core/Player/player.tscn" id="1_3hm6b"]
+[ext_resource type="Script" uid="uid://c3s0ot4kwqsa1" path="res://Core/game_player_core.gd" id="1_8nlf3"]
+[ext_resource type="PackedScene" uid="uid://csetgrcc6eo4e" path="res://Resources/Maps/MainMap/death_area.tscn" id="3_epain"]
+[ext_resource type="PackedScene" uid="uid://bqlay5gsp6w3o" path="res://UI/crosshair2D/crosshair.tscn" id="4_mlh86"]
+[ext_resource type="Texture2D" uid="uid://cmh6gxig3pm4f" path="res://Resources/Asssets/crosshairAimLine.png" id="6_epain"]
+
+[node name="GamePlayerCore" type="Node2D" unique_id=800167268]
+script = ExtResource("1_8nlf3")
+
+[node name="Player" parent="." unique_id=2127532797 instance=ExtResource("1_3hm6b")]
+position = Vector2(160, 176)
+
+[node name="DeathArea" parent="." unique_id=1489501357 instance=ExtResource("3_epain")]
+
+[node name="Crosshair" parent="." unique_id=775337758 instance=ExtResource("4_mlh86")]
+
+[node name="AimLine" type="Line2D" parent="." unique_id=1216046054]
+z_index = 4
+width = 1.0
+default_color = Color(1, 1, 1, 0.54509807)
+texture = ExtResource("6_epain")
+texture_mode = 1
+
+[connection signal="slashing" from="Player" to="." method="_on_player_slashing"]
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

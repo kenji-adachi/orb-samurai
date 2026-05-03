@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d0ugjojarcpea"]
+
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="1_6h2ct"]
+[ext_resource type="Script" uid="uid://cabtv2wwbv0ax" path="res://Core/Enemy/scripts/bow_enemy.gd" id="2_d663c"]
+[ext_resource type="Texture2D" uid="uid://bmfsvuink5gpd" path="res://Core/Enemy/art/tinyKnightBow.png" id="2_svab3"]
+
+[node name="BowEnemy" unique_id=2094694508 instance=ExtResource("1_6h2ct")]
+script = ExtResource("2_d663c")
+itemTypeTexture = ExtResource("2_svab3")
+
+[node name="Item" parent="." index="2" unique_id=1409613477]
+texture = ExtResource("2_svab3")
+
+[node name="Timer" type="Timer" parent="." index="5" unique_id=1393826184]
+wait_time = 3.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." index="6" unique_id=405508430]
+position = Vector2(0, 4)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

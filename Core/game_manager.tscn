@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://db72hw7ro8qf6"]
+
+[ext_resource type="Script" uid="uid://dtljihunwlwpr" path="res://Core/game_manager.gd" id="1_rjcw1"]
+
+[node name="GameManager" type="Node" unique_id=1864715777]
+script = ExtResource("1_rjcw1")
+
+[node name="World2D" type="Node2D" parent="." unique_id=704483069]
+
+[node name="LevelManager" type="Node2D" parent="World2D" unique_id=516036526]
+
+[node name="UIManager" type="Control" parent="." unique_id=1122569205]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
