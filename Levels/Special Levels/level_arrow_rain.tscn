@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ct6ngql15n4si"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_0w36m"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="2_tq7wf"]
+
+[node name="LevelArrowRain" unique_id=181910146 instance=ExtResource("1_0w36m")]
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_tq7wf")]
+position = Vector2(42, 42)
+
+[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=555697458 instance=ExtResource("2_tq7wf")]
+position = Vector2(58, 42)
+
+[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=1295423526 instance=ExtResource("2_tq7wf")]
+position = Vector2(74, 42)
+
+[node name="BowEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=109451063 instance=ExtResource("2_tq7wf")]
+position = Vector2(234, 42)
+
+[node name="BowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=1530000717 instance=ExtResource("2_tq7wf")]
+position = Vector2(90, 42)
+
+[node name="BowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=1732130190 instance=ExtResource("2_tq7wf")]
+position = Vector2(106, 42)
+
+[node name="BowEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=80412 instance=ExtResource("2_tq7wf")]
+position = Vector2(122, 42)
+
+[node name="BowEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=1090490465 instance=ExtResource("2_tq7wf")]
+position = Vector2(186, 42)
+
+[node name="BowEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=1216272047 instance=ExtResource("2_tq7wf")]
+position = Vector2(202, 42)
+
+[node name="BowEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=352578227 instance=ExtResource("2_tq7wf")]
+position = Vector2(218, 42)
+
+[node name="BowEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="10" unique_id=1396456591 instance=ExtResource("2_tq7wf")]
+position = Vector2(250, 42)
+
+[node name="BowEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="11" unique_id=1760279099 instance=ExtResource("2_tq7wf")]
+position = Vector2(266, 42)
+
+[node name="BowEnemy18" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="12" unique_id=371406292 instance=ExtResource("2_tq7wf")]
+position = Vector2(282, 42)
+
+[node name="BowEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="13" unique_id=1287007627 instance=ExtResource("2_tq7wf")]
+position = Vector2(138, 42)
+
+[node name="BowEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="14" unique_id=1000603823 instance=ExtResource("2_tq7wf")]
+position = Vector2(154, 42)
+
+[node name="BowEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="15" unique_id=1469859556 instance=ExtResource("2_tq7wf")]
+position = Vector2(170, 42)
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Rain from above"

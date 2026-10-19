@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bohgd7wpd3sb2"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_hpxjp"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="2_iivmy"]
+
+[node name="Level4" unique_id=181910146 instance=ExtResource("1_hpxjp")]
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_iivmy")]
+position = Vector2(161, 18)
+
+[node name="SwordEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=1805760720 instance=ExtResource("2_iivmy")]
+position = Vector2(147, 18)
+
+[node name="SwordEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=834817723 instance=ExtResource("2_iivmy")]
+position = Vector2(175, 18)

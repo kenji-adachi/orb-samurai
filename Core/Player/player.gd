@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @onready var playerSprite = $AnimatedSprite2D
 @onready var health = $HealthComponent
+@onready var slashSFX = $SlashSFX
 
 var currentAction = "none"
 
@@ -45,6 +46,7 @@ func _input(event):
 
 func slash():
 	playerSprite.play("slash")
+	slashSFX.play()
 	slashing.emit()
 	await playerSprite.animation_finished
 	await get_tree().create_timer(0.2).timeout
@@ -52,9 +54,7 @@ func slash():
 
 
 func damage(amount: float):
-	print("Old Health: " + str(health.health))
 	health.take_damage(amount)
-	print("New Health: " + str(health.health))
 
 
 func _physics_process(delta):
@@ -76,3 +76,11 @@ func stopMovement():
 func rotatePlayer(directionVector: Vector2):
 	look_at(directionVector)
 	rotation += deg_to_rad(90)
+
+
+func _on_health_component_dead():
+	EventBus.player_died.emit()
+
+
+func _on_health_component_health_changed(currentHealth):
+	EventBus.player_health_changed.emit(currentHealth)

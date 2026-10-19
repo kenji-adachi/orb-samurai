@@ -72,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8h8a5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"orb",
 "speed": 5.0
 }]
@@ -101,7 +101,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4kjws")
 }],
-"loop": true,
+"loop": 1,
 "name": &"flags",
 "speed": 5.0
 }]
@@ -138,28 +138,46 @@ frame_progress = 0.64668965
 
 [node name="StartGameButton" type="Button" parent="." unique_id=2061615569]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 122.0
-offset_right = 98.0
-offset_bottom = 149.0
+offset_left = 113.0
+offset_top = 98.0
+offset_right = 214.0
+offset_bottom = 134.0
 text = "START GAME"
 
-[node name="OptionsButton" type="Button" parent="." unique_id=1884028364]
+[node name="ChallengeLevelButton" type="Button" parent="." unique_id=651185788]
+visible = false
 layout_mode = 0
-offset_left = 2.0
-offset_top = 151.0
-offset_right = 68.0
-offset_bottom = 178.0
-text = "OPTIONS"
+offset_left = 95.0
+offset_top = 60.0
+offset_right = 231.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.88, 0, 0.014666443, 1)
+theme_override_colors/font_pressed_color = Color(0.8784314, 0, 0.015686275, 1)
+theme_override_colors/font_hover_color = Color(0.8784314, 0, 0.015686275, 1)
+text = "CHALLENGE LEVEL"
 
 [node name="QuitGameButton" type="Button" parent="." unique_id=2022870727]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 151.0
-offset_right = 317.0
-offset_bottom = 178.0
+offset_left = 118.0
+offset_top = 137.0
+offset_right = 208.0
+offset_bottom = 173.0
 text = "QUIT GAME"
 
+[node name="Label" type="Label" parent="." unique_id=2128424810]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 39.0
+offset_right = 222.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.7680723, 0.6911754, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8666667)
+theme_override_colors/font_outline_color = Color(0.4296193, 4.2716042e-07, 1.6845763e-07, 1)
+theme_override_font_sizes/font_size = 24
+text = "ORB SAMURAI"
+
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_mouse_entered"]
+[connection signal="mouse_exited" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_mouse_exited"]
+[connection signal="pressed" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_pressed"]
 [connection signal="pressed" from="QuitGameButton" to="." method="_on_quit_game_button_pressed"]

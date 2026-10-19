@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bbc4pbrg6bpqi"]
+
+[ext_resource type="PackedScene" uid="uid://kj5usds7ae6p" path="res://UI/EndGameScreen/end_game_screen.tscn" id="1_jky8g"]
+
+[node name="ChallengeBeatScreen" unique_id=1327776384 instance=ExtResource("1_jky8g")]
+
+[node name="Label" parent="." index="0" unique_id=24766055]
+offset_left = 68.0
+offset_top = 65.0
+offset_right = 263.0
+offset_bottom = 88.0
+text = "Thank you For Playing Again"
+
+[node name="Label2" type="Label" parent="." index="1" unique_id=1454702092]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 42.0
+offset_right = 274.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0.18, 1, 0.39866668, 1)
+text = "YOU HAVE DONE THE IMPOSSIBLE"

@@ -9,6 +9,8 @@ extends CharacterBody2D
 @onready var hitSfx = $AudioStreamPlayer2D
 @onready var animator = $AnimationPlayer
 @onready var collisioner = $CollisionShape2D
+@onready var spawnSFX = $AudioStreamPlayer2D
+@onready var wallHitSFX = $WallHit
 
 signal formed
 
@@ -16,6 +18,7 @@ signal formed
 func _ready():
 	collisioner.set_deferred("disabled", true)
 	animator.play("spawn")
+	spawnSFX.play()
 	await animator.animation_finished
 	formed.emit()
 	collisioner.set_deferred("disabled", false)
@@ -35,7 +38,8 @@ func _physics_process(delta):
 		#print(collider)
 		velocity = velocity.bounce(collider.get_normal())
 		velocity = velocity.normalized() * ballSpeed
-			#hitSfx.play()
+		if collider.get_collider().is_in_group("Walls"):
+			wallHitSFX.play(0.10)
 		#if collider.get_collider_id() != previousCollider:
 			#previousCollider = collider.get_collider_id()
 			

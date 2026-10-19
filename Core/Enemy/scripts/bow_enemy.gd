@@ -7,7 +7,8 @@ const arrowScene : PackedScene = preload("uid://chchw4pj4t7e5")
 
 
 func _on_timer_timeout():
-	shootArrow()
+	if StateMachine.current_state == StateMachine.State.PLAYING:
+		shootArrow()
 
 
 func shootArrow():

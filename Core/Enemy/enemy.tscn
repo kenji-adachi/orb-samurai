@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgwtwy0ctl75t" path="res://Core/Enemy/art/smallKnightHead.png" id="1_apucl"]
 [ext_resource type="Shader" uid="uid://bcjm72npoebtv" path="res://Core/Enemy/art/enemy.gdshader" id="2_1y6qf"]
 [ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="3_1coru"]
+[ext_resource type="AudioStream" uid="uid://c5k3qmisrudh8" path="res://Resources/Sounds/SFX/platesHit9.ogg" id="5_pqhtm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1coru"]
 shader = ExtResource("2_1y6qf")
@@ -193,6 +194,9 @@ libraries/ = SubResource("AnimationLibrary_5ucym")
 
 [node name="ItemAnimation" type="AnimationPlayer" parent="." unique_id=124670308]
 libraries/ = SubResource("AnimationLibrary_2hg5x")
+
+[node name="BodyHitSFX" type="AudioStreamPlayer2D" parent="." unique_id=1888501188]
+stream = ExtResource("5_pqhtm")
 
 [connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

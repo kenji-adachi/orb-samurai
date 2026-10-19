@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ywka3luhlwdd"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_cc3ra"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="2_hob04"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_hvjl6"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="4_fgtf2"]
+
+[node name="TutorialLevel4" unique_id=181910146 instance=ExtResource("1_cc3ra")]
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_hob04")]
+position = Vector2(161, 68)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=625249619 instance=ExtResource("3_hvjl6")]
+position = Vector2(161, 50)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=749659255 instance=ExtResource("3_hvjl6")]
+position = Vector2(185, 50)
+
+[node name="Enemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=1031243509 instance=ExtResource("3_hvjl6")]
+position = Vector2(138, 50)
+
+[node name="Label" type="Label" parent="TutorialMessages" parent_id_path=PackedInt32Array(366902855) index="0" unique_id=2023200994]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 81.0
+offset_right = 216.0
+offset_bottom = 108.0
+theme = ExtResource("4_fgtf2")
+theme_override_font_sizes/font_size = 12
+text = "Sword Knight
+Deflects a Fast Orb"
+horizontal_alignment = 1
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Enemy can deflect too"

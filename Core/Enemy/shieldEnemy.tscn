@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="1_cktbw"]
 [ext_resource type="Script" uid="uid://d57w2tbvh5by" path="res://Core/Enemy/scripts/shield_enemy.gd" id="2_cktbw"]
 [ext_resource type="Texture2D" uid="uid://cn1an7giipdac" path="res://Core/Enemy/art/tinyKnightShield.png" id="2_kmhpg"]
+[ext_resource type="AudioStream" uid="uid://chtfe0sjiwocj" path="res://Resources/Sounds/SFX/impactMining_003.ogg" id="4_q6v1f"]
+[ext_resource type="AudioStream" uid="uid://cihn7ywe0omvn" path="res://Resources/Sounds/SFX/platesHit4.ogg" id="5_wgabf"]
 
 [node name="ShieldEnemy" unique_id=2094694508 instance=ExtResource("1_cktbw")]
 script = ExtResource("2_cktbw")
@@ -11,3 +13,11 @@ itemTypeTexture = ExtResource("2_kmhpg")
 
 [node name="Item" parent="." index="2" unique_id=1409613477]
 texture = ExtResource("2_kmhpg")
+
+[node name="ShieldBreak" type="AudioStreamPlayer2D" parent="." index="7" unique_id=1764350924]
+stream = ExtResource("4_q6v1f")
+max_polyphony = 2
+
+[node name="ShieldHit" type="AudioStreamPlayer2D" parent="." index="8" unique_id=1210140703]
+stream = ExtResource("5_wgabf")
+max_polyphony = 2

@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 func _ready():
 	velocity = speed * directionVector.normalized()
+	rotation = directionVector.angle() - (PI / 2)
 
 func _process(delta):
 	var collider = move_and_collide(velocity * delta)

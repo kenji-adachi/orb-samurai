@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bkflyobxcamqk"]
+
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="1_6jed3"]
+[ext_resource type="Script" uid="uid://dqw0d8br581pv" path="res://UI/LevelUI/level_lost_ui.gd" id="2_6jed3"]
+
+[node name="LevelLost" type="Control" unique_id=939275431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6jed3")
+script = ExtResource("2_6jed3")
+metadata/_edit_use_anchors_ = true
+
+[node name="RetryButton" type="Button" parent="." unique_id=1980629482]
+layout_mode = 1
+offset_left = 111.0
+offset_top = 79.0
+offset_right = 209.0
+offset_bottom = 110.0
+text = "RETRY"
+
+[node name="GiveUpButton" type="Button" parent="." unique_id=408781999]
+layout_mode = 1
+offset_left = 111.0
+offset_top = 115.0
+offset_right = 209.0
+offset_bottom = 146.0
+text = "GIVE UP"
+
+[node name="Label" type="Label" parent="." unique_id=925673261]
+layout_mode = 1
+offset_left = 119.0
+offset_top = 45.0
+offset_right = 200.0
+offset_bottom = 64.0
+text = "LEVEL LOST"
+
+[node name="Label2" type="Label" parent="." unique_id=738408675]
+layout_mode = 1
+offset_left = 29.0
+offset_top = 142.0
+offset_right = 294.0
+offset_bottom = 161.0
+theme_type_variation = &"LabelSmall"
+text = "(Progress Not Saved... Don't Give Up)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="GiveUpButton" to="." method="_on_give_up_button_pressed"]

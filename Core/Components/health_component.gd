@@ -10,6 +10,7 @@ var health: float
 
 func _ready():
 	health = maxHealth
+	healthChanged.emit(health)
 	
 func take_damage(amount: float):
 	health = clampf(health - amount, 0, maxHealth)

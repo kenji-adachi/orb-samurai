@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://db72hw7ro8qf6"]
 
 [ext_resource type="Script" uid="uid://dtljihunwlwpr" path="res://Core/game_manager.gd" id="1_rjcw1"]
+[ext_resource type="AudioStream" uid="uid://bdy31svka8bmn" path="res://Resources/Sounds/Music/Space Cadet.ogg" id="2_y10nc"]
+[ext_resource type="AudioStream" uid="uid://c53ysbg4wimdo" path="res://Resources/Sounds/Music/Retro Mystic.ogg" id="3_vwchc"]
+[ext_resource type="AudioStream" uid="uid://v7ts3gjhslt6" path="res://Resources/Sounds/UI SFX/confirmation_002.ogg" id="4_db0fk"]
 
 [node name="GameManager" type="Node" unique_id=1864715777]
 script = ExtResource("1_rjcw1")
@@ -14,3 +17,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="MusicMenu" type="AudioStreamPlayer2D" parent="." unique_id=594336528]
+stream = ExtResource("2_y10nc")
+volume_db = -5.0
+autoplay = true
+
+[node name="MusicGame" type="AudioStreamPlayer2D" parent="." unique_id=1496509133]
+stream = ExtResource("3_vwchc")
+volume_db = -10.0
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer2D" parent="." unique_id=1968079502]
+stream = ExtResource("4_db0fk")

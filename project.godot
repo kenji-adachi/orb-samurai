@@ -10,13 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Game-2-breakout"
+config/name="Orb Samurai"
 run/main_scene="uid://db72hw7ro8qf6"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 
 [autoload]
 
 EventBus="*uid://b4slv0yytsc7x"
+StateMachine="*uid://cndoexsa204xl"
+Accesability="*uid://c71wummhmlbg2"
 
 [display]
 
@@ -40,6 +42,7 @@ folder_colors={
 [global_group]
 
 Enemies=""
+Walls=""
 
 [input]
 

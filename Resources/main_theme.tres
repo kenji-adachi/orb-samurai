@@ -1,11 +1,99 @@
 [gd_resource type="Theme" format=3 uid="uid://bvj5cx2jg5kee"]
 
 [ext_resource type="FontFile" uid="uid://bie4ii14xjpi8" path="res://Resources/Fonts/Harmonic.ttf" id="1_rpoj5"]
+[ext_resource type="Texture2D" uid="uid://cx1nsitciqu8o" path="res://Resources/Asssets/large_ui_tilemap.png" id="2_b4loo"]
+[ext_resource type="Texture2D" uid="uid://jkqu6v5inxqq" path="res://Resources/Asssets/small_ui_tilemap.png" id="3_jniar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jniar"]
+atlas = ExtResource("2_b4loo")
+region = Rect2(132, 33, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4loo"]
+texture = SubResource("AtlasTexture_jniar")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gse6s"]
+atlas = ExtResource("2_b4loo")
+region = Rect2(132, 65, 32, 33)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wr67y"]
+texture = SubResource("AtlasTexture_gse6s")
+texture_margin_left = 8.0
+texture_margin_top = 9.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4loo"]
+atlas = ExtResource("2_b4loo")
+region = Rect2(165, 0, 32, 33)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jniar"]
+texture = SubResource("AtlasTexture_b4loo")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1lpj"]
+atlas = ExtResource("2_b4loo")
+region = Rect2(66, 66, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_skrjv"]
+texture = SubResource("AtlasTexture_s1lpj")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4sfh"]
+atlas = ExtResource("3_jniar")
+region = Rect2(19, 68, 12, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1lpj"]
+texture = SubResource("AtlasTexture_o4sfh")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36aod"]
+atlas = ExtResource("3_jniar")
+region = Rect2(87, 68, 12, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o4sfh"]
+texture = SubResource("AtlasTexture_36aod")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [resource]
 Button/constants/outline_size = 2
 Button/font_sizes/font_size = 18
 Button/fonts/font = ExtResource("1_rpoj5")
+Button/styles/hover = SubResource("StyleBoxTexture_b4loo")
+Button/styles/normal = SubResource("StyleBoxTexture_wr67y")
+Button/styles/pressed = SubResource("StyleBoxTexture_jniar")
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 18
 Label/fonts/font = ExtResource("1_rpoj5")
+LabelSmall/base_type = &"Label"
+LabelSmall/colors/font_color = Color(1, 1, 1, 1)
+LabelSmall/colors/font_outline_color = Color(0, 0, 0, 1)
+LabelSmall/colors/font_shadow_color = Color(0, 0, 0, 0)
+LabelSmall/constants/line_spacing = 3
+LabelSmall/constants/outline_size = 2
+LabelSmall/constants/shadow_offset_x = 1
+LabelSmall/constants/shadow_offset_y = 1
+LabelSmall/constants/shadow_outline_size = 1
+LabelSmall/font_sizes/font_size = 7
+LabelSmall/fonts/font = ExtResource("1_rpoj5")
+Panel/styles/panel = SubResource("StyleBoxTexture_skrjv")
+healthBar/base_type = &"ProgressBar"
+healthBar/styles/background = SubResource("StyleBoxTexture_s1lpj")
+healthBar/styles/fill = SubResource("StyleBoxTexture_o4sfh")

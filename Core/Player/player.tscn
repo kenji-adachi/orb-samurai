@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhnh3fj4jwjjr" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterIdle.png" id="1_so0u2"]
 [ext_resource type="Texture2D" uid="uid://cuflxsin3cyxj" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterSlash.png" id="3_jf5bi"]
 [ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="4_jf5bi"]
+[ext_resource type="AudioStream" uid="uid://cpj44ay4hss7r" path="res://Resources/Sounds/SFX/drawKnife3.ogg" id="5_imt68"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfjle"]
 radius = 7.0
@@ -91,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cx3fm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -117,7 +118,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m68dj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"slash",
 "speed": 20.0
 }]
@@ -150,4 +151,9 @@ frame_progress = 0.59947556
 [node name="BallSpawn" type="Marker2D" parent="." unique_id=636529056]
 position = Vector2(0, -15)
 
+[node name="SlashSFX" type="AudioStreamPlayer2D" parent="." unique_id=536466408]
+stream = ExtResource("5_imt68")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
+[connection signal="healthChanged" from="HealthComponent" to="." method="_on_health_component_health_changed"]

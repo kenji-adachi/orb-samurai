@@ -9,6 +9,7 @@ signal enemyDied
 @onready var health = $HealthComponent
 @onready var bodyAnimator = $BodyAnimation
 @onready var itemAnimator = $ItemAnimation
+@onready var bodyHitSFX = $BodyHitSFX
 
 
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
+	bodyHitSFX.play(0.11)
 	hitFlash()
 	health.take_damage(100)
 
@@ -23,6 +25,7 @@ func _on_area_2d_body_entered(body):
 func _on_health_component_dead():
 	enemyDied.emit()
 	await bodyAnimator.animation_finished
+	#await bodyHitSFX.finished
 	queue_free()
 
 func hitFlash():

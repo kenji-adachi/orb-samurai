@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b074fyc0ki6xp"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_5w154"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="2_mqfxy"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="3_so22c"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="4_ompfl"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="4_so22c"]
+
+[node name="TutorialLevel3" unique_id=181910146 instance=ExtResource("1_5w154")]
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=505001324 instance=ExtResource("2_mqfxy")]
+position = Vector2(160, 36)
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=507253718 instance=ExtResource("3_so22c")]
+position = Vector2(160, 18)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=2094694508 instance=ExtResource("4_ompfl")]
+position = Vector2(146, 18)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=498008045 instance=ExtResource("4_ompfl")]
+position = Vector2(174, 18)
+
+[node name="Label" type="Label" parent="TutorialMessages" parent_id_path=PackedInt32Array(366902855) index="0" unique_id=1808277518]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 54.0
+offset_right = 216.0
+offset_bottom = 81.0
+theme = ExtResource("4_so22c")
+theme_override_font_sizes/font_size = 12
+text = "Bow Knight
+Shoots Arrows"
+horizontal_alignment = 1
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Yes, there are archers"

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://kj5usds7ae6p"]
+
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="1_5opwx"]
+[ext_resource type="Script" uid="uid://ccqw2bmbuuuxa" path="res://UI/EndGameScreen/end_game_screen.gd" id="2_57olp"]
+[ext_resource type="FontFile" uid="uid://bie4ii14xjpi8" path="res://Resources/Fonts/Harmonic.ttf" id="3_v8uxy"]
+
+[node name="EndGameScreen" type="Control" unique_id=1327776384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5opwx")
+script = ExtResource("2_57olp")
+
+[node name="Label" type="Label" parent="." unique_id=24766055]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 67.0
+offset_right = 236.0
+offset_bottom = 90.0
+text = "Thank you For Playing"
+
+[node name="Button" type="Button" parent="." unique_id=13655486]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 92.0
+offset_right = 196.0
+offset_bottom = 119.0
+text = "Main Menu"
+
+[node name="Github" type="LinkButton" parent="." unique_id=1471046572]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 132.0
+offset_right = 153.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0.65762615, 0.302677, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_v8uxy")
+theme_override_font_sizes/font_size = 12
+text = "Github"
+underline = 1
+uri = "https://github.com/kenji-adachi"
+
+[node name="Youtube" type="LinkButton" parent="." unique_id=124775650]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 132.0
+offset_right = 202.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0.88, 0.25520003, 0.25520003, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_v8uxy")
+theme_override_font_sizes/font_size = 12
+text = "YouTube"
+underline = 1
+uri = "https://www.youtube.com/@devbakerystudio"
+
+[node name="CreditsHeader" type="Label" parent="." unique_id=894893557]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 134.0
+offset_right = 60.0
+offset_bottom = 142.0
+theme_type_variation = &"LabelSmall"
+theme_override_colors/font_color = Color(0.26999998, 0.52549994, 1, 1)
+theme_override_font_sizes/font_size = 8
+text = "Credits"
+
+[node name="SpecialThanks" type="Label" parent="." unique_id=107856451]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 145.0
+offset_right = 142.0
+offset_bottom = 177.0
+theme_type_variation = &"LabelSmall"
+text = "Art: Myself (first Time)
+Audio: Kenney Assets
+Support: My Wonderful Girlfriend"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

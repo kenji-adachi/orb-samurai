@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cem2yhi16w7qq"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_gws5j"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="2_6rd55"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="3_gogyx"]
+
+[node name="LevelFlanking" unique_id=181910146 instance=ExtResource("1_gws5j")]
+
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_6rd55")]
+position = Vector2(161, 86)
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=726725327 instance=ExtResource("2_6rd55")]
+position = Vector2(176, 77)
+
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=116850528 instance=ExtResource("2_6rd55")]
+position = Vector2(146, 77)
+
+[node name="ShieldEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=1736048952 instance=ExtResource("2_6rd55")]
+position = Vector2(236, 41)
+
+[node name="ShieldEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=852077499 instance=ExtResource("2_6rd55")]
+position = Vector2(86, 41)
+
+[node name="ShieldEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=372246282 instance=ExtResource("2_6rd55")]
+position = Vector2(131, 68)
+
+[node name="ShieldEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=569777647 instance=ExtResource("2_6rd55")]
+position = Vector2(191, 68)
+
+[node name="ShieldEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=1116820380 instance=ExtResource("2_6rd55")]
+position = Vector2(221, 50)
+
+[node name="ShieldEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=588695188 instance=ExtResource("2_6rd55")]
+position = Vector2(206, 59)
+
+[node name="ShieldEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=1854764352 instance=ExtResource("2_6rd55")]
+position = Vector2(101, 50)
+
+[node name="ShieldEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="10" unique_id=611552003 instance=ExtResource("2_6rd55")]
+position = Vector2(116, 59)
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="11" unique_id=687455531 instance=ExtResource("3_gogyx")]
+position = Vector2(161, 34)
+
+[node name="SwordEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="12" unique_id=1993243535 instance=ExtResource("3_gogyx")]
+position = Vector2(176, 19)
+
+[node name="SwordEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="13" unique_id=172015145 instance=ExtResource("3_gogyx")]
+position = Vector2(146, 19)
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Flanking"

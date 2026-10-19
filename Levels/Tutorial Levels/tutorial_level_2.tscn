@@ -2,18 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_tp600"]
 [ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="2_v7lkl"]
-[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_s2evt"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="4_s2evt"]
 
 [node name="TutorialLevel2" unique_id=181910146 instance=ExtResource("1_tp600")]
 
-[node name="ShieldEnemy" parent="." index="2" unique_id=2094694508 instance=ExtResource("2_v7lkl")]
-position = Vector2(154, 59)
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2026997863 instance=ExtResource("2_v7lkl")]
+position = Vector2(161, 59)
 
-[node name="ShieldEnemy2" parent="." index="3" unique_id=1365755008 instance=ExtResource("2_v7lkl")]
-position = Vector2(168, 59)
+[node name="Label" type="Label" parent="TutorialMessages" parent_id_path=PackedInt32Array(366902855) index="0" unique_id=1051923354]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 73.0
+offset_right = 216.0
+offset_bottom = 100.0
+theme = ExtResource("4_s2evt")
+theme_override_font_sizes/font_size = 12
+text = "Shield Knight
+Takes 3 hits"
+horizontal_alignment = 1
 
-[node name="Enemy" parent="." index="4" unique_id=229895877 instance=ExtResource("3_s2evt")]
-position = Vector2(154, 41)
-
-[node name="Enemy2" parent="." index="5" unique_id=1898503007 instance=ExtResource("3_s2evt")]
-position = Vector2(168, 41)
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Learning The Shield"

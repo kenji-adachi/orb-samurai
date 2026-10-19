@@ -11,10 +11,13 @@ const ballScene : PackedScene = preload("uid://d0d00kkpa18ii")
 @onready var ball = null
 var ballForming = false
 
+
 func _ready():
 	EventBus.spawn_ball.connect(_on_spawn_ball)
+	Accesability.playerLocation = player.global_position
 
 func _process(delta):
+	Accesability.playerLocation = player.global_position
 	playerRotation()
 	if aimLineOn:
 		updateAimLine()
@@ -22,7 +25,7 @@ func _process(delta):
 		ball.global_position = ballSpawn.global_position
 		await ball.formed
 		ballForming = false
-		
+	
 	
 func spawnBall():
 	ballForming = true

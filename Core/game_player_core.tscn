@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://csetgrcc6eo4e" path="res://Resources/Maps/MainMap/death_area.tscn" id="3_epain"]
 [ext_resource type="PackedScene" uid="uid://bqlay5gsp6w3o" path="res://UI/crosshair2D/crosshair.tscn" id="4_mlh86"]
 [ext_resource type="Texture2D" uid="uid://cmh6gxig3pm4f" path="res://Resources/Asssets/crosshairAimLine.png" id="6_epain"]
+[ext_resource type="PackedScene" uid="uid://dvin61wkhqxvh" path="res://UI/PlayerHealthBar/PlayerHealthBar.tscn" id="6_mlh86"]
 
 [node name="GamePlayerCore" type="Node2D" unique_id=800167268]
 script = ExtResource("1_8nlf3")
@@ -22,6 +23,8 @@ width = 1.0
 default_color = Color(1, 1, 1, 0.54509807)
 texture = ExtResource("6_epain")
 texture_mode = 1
+
+[node name="PlayerHealthBar" parent="." unique_id=746035333 instance=ExtResource("6_mlh86")]
 
 [connection signal="slashing" from="Player" to="." method="_on_player_slashing"]
 [connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

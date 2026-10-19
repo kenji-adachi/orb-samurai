@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://da8maeh8jfir3" path="res://Core/GameBall/game_ball.gd" id="1_b1ov1"]
 [ext_resource type="Texture2D" uid="uid://dbq2k1iwidt8d" path="res://Core/GameBall/pongBall.png" id="1_hyupe"]
-[ext_resource type="AudioStream" uid="uid://bk48pjvgm2nq" path="res://Core/GameBall/pingSFX.mp3" id="3_qmph6"]
+[ext_resource type="AudioStream" uid="uid://5qyfs848og5i" path="res://Resources/Sounds/SFX/laser4.ogg" id="4_aymfs"]
 [ext_resource type="Texture2D" uid="uid://wnulrfugfsmc" path="res://Core/GameBall/tinyWhiteRing.png" id="4_xwb13"]
+[ext_resource type="AudioStream" uid="uid://y8vkk77joylj" path="res://Resources/Sounds/SFX/stoneHit1.ogg" id="5_aymfs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1ov1"]
 radius = 2.0
@@ -129,10 +130,6 @@ shape = SubResource("CircleShape2D_b1ov1")
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_hyupe")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=344017989]
-stream = ExtResource("3_qmph6")
-max_polyphony = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=80163570]
 libraries/ = SubResource("AnimationLibrary_xwb13")
 
@@ -141,3 +138,12 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.7529412)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_xwb13")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=356223043]
+stream = ExtResource("4_aymfs")
+volume_db = -28.0
+pitch_scale = 0.2
+
+[node name="WallHit" type="AudioStreamPlayer2D" parent="." unique_id=2107696386]
+stream = ExtResource("5_aymfs")
+max_polyphony = 2

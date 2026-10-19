@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b7vsmk02iimj"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_oynor"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="2_ssani"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="3_5flxj"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="4_jtv30"]
+
+[node name="Level3" unique_id=181910146 instance=ExtResource("1_oynor")]
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_ssani")]
+position = Vector2(160, 42)
+
+[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=741522494 instance=ExtResource("2_ssani")]
+position = Vector2(221, 41)
+
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=760305928 instance=ExtResource("3_5flxj")]
+position = Vector2(160, 60)
+
+[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=1800100101 instance=ExtResource("2_ssani")]
+position = Vector2(99, 41)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=777899300 instance=ExtResource("4_jtv30")]
+position = Vector2(99, 59)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=1784695333 instance=ExtResource("4_jtv30")]
+position = Vector2(221, 59)

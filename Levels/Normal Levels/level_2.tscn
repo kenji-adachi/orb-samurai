@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://2bcmdlxicdin"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_3gevv"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="2_5bi43"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_f550o"]
+
+[node name="Level2" unique_id=181910146 instance=ExtResource("1_3gevv")]
+
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_5bi43")]
+position = Vector2(170, 64)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=1231909696 instance=ExtResource("3_f550o")]
+position = Vector2(162, 46)
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=781121816 instance=ExtResource("2_5bi43")]
+position = Vector2(155, 64)

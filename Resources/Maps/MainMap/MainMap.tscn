@@ -27,7 +27,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_31560")
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1931114434]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1931114434 groups=["Walls"]]
 collision_layer = 4
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_31560")
@@ -36,7 +36,7 @@ physics_material_override = SubResource("PhysicsMaterial_31560")
 position = Vector2(0, 84)
 shape = SubResource("RectangleShape2D_31560")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=885071648]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=885071648 groups=["Walls"]]
 collision_layer = 4
 collision_mask = 2
 
@@ -44,7 +44,7 @@ collision_mask = 2
 position = Vector2(320, 84)
 shape = SubResource("RectangleShape2D_ew0vm")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1954004358]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1954004358 groups=["Walls"]]
 collision_layer = 4
 collision_mask = 2
 

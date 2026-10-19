@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="1_ulr5n"]
 [ext_resource type="Script" uid="uid://dnowc6sh25y1j" path="res://Core/Enemy/scripts/sword_enemy.gd" id="2_8u8a2"]
 [ext_resource type="Texture2D" uid="uid://cueavgo6pqj60" path="res://Core/Enemy/art/tinyKnightSword.png" id="3_okc1r"]
+[ext_resource type="AudioStream" uid="uid://dlhop25207d3v" path="res://Resources/Sounds/SFX/swordMetal6.ogg" id="4_1bkv7"]
 
 [node name="SwordEnemy" unique_id=2094694508 instance=ExtResource("1_ulr5n")]
 script = ExtResource("2_8u8a2")
@@ -11,3 +12,6 @@ itemTypeTexture = ExtResource("3_okc1r")
 
 [node name="Item" parent="." index="2" unique_id=1409613477]
 texture = ExtResource("3_okc1r")
+
+[node name="SwordBreakSFX" type="AudioStreamPlayer2D" parent="." index="7" unique_id=1775339285]
+stream = ExtResource("4_1bkv7")

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dvin61wkhqxvh"]
+
+[ext_resource type="Script" uid="uid://c6c674uwrws1o" path="res://UI/PlayerHealthBar/player_health_bar.gd" id="1_ybylg"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="2_r5ks3"]
+[ext_resource type="Texture2D" uid="uid://jkqu6v5inxqq" path="res://Resources/Asssets/small_ui_tilemap.png" id="3_31tv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4sfh"]
+atlas = ExtResource("3_31tv2")
+region = Rect2(2, 68, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1lpj"]
+atlas = ExtResource("3_31tv2")
+region = Rect2(19, 68, 12, 16)
+
+[node name="PlayerHealthBar" type="Control" unique_id=746035333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ybylg")
+
+[node name="Panel" type="Panel" parent="." unique_id=450132414]
+z_index = 5
+layout_mode = 0
+offset_left = 302.0
+offset_top = 3.0
+offset_right = 322.0
+offset_bottom = 71.0
+rotation = 1.5707964
+theme = ExtResource("2_r5ks3")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel" unique_id=280732168]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.08800001
+anchor_right = 0.70000005
+anchor_bottom = 0.91200006
+offset_top = 0.015999317
+offset_bottom = -0.016002655
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 4
+stretch_margin_top = 4
+stretch_margin_right = 4
+stretch_margin_bottom = 4
+texture_under = SubResource("AtlasTexture_o4sfh")
+texture_progress = SubResource("AtlasTexture_s1lpj")

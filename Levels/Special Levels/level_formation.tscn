@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dkmbjej0rxgkb"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_re24p"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="2_355h6"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_uh3o7"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="4_5n4ms"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="5_cwoyg"]
+
+[node name="LevelFormation" unique_id=181910146 instance=ExtResource("1_re24p")]
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_355h6")]
+position = Vector2(17, 20)
+
+[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=1851606874 instance=ExtResource("2_355h6")]
+position = Vector2(32, 20)
+
+[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=1807334871 instance=ExtResource("2_355h6")]
+position = Vector2(47, 20)
+
+[node name="BowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=1298459166 instance=ExtResource("2_355h6")]
+position = Vector2(273, 20)
+
+[node name="BowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=1447612498 instance=ExtResource("2_355h6")]
+position = Vector2(288, 20)
+
+[node name="BowEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=745329599 instance=ExtResource("2_355h6")]
+position = Vector2(303, 20)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=1862913060 instance=ExtResource("3_uh3o7")]
+position = Vector2(105, 37)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=2052081632 instance=ExtResource("3_uh3o7")]
+position = Vector2(119, 37)
+
+[node name="Enemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=585517953 instance=ExtResource("3_uh3o7")]
+position = Vector2(133, 37)
+
+[node name="Enemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=36534855 instance=ExtResource("3_uh3o7")]
+position = Vector2(147, 37)
+
+[node name="Enemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="10" unique_id=502023437 instance=ExtResource("3_uh3o7")]
+position = Vector2(161, 37)
+
+[node name="Enemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="11" unique_id=1638361024 instance=ExtResource("3_uh3o7")]
+position = Vector2(175, 37)
+
+[node name="Enemy7" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="12" unique_id=954464050 instance=ExtResource("3_uh3o7")]
+position = Vector2(189, 37)
+
+[node name="Enemy8" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="13" unique_id=1798672612 instance=ExtResource("3_uh3o7")]
+position = Vector2(203, 37)
+
+[node name="Enemy9" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="14" unique_id=693211487 instance=ExtResource("3_uh3o7")]
+position = Vector2(217, 37)
+
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="15" unique_id=265648440 instance=ExtResource("4_5n4ms")]
+position = Vector2(17, 38)
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="16" unique_id=955819443 instance=ExtResource("4_5n4ms")]
+position = Vector2(32, 38)
+
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="17" unique_id=1652366974 instance=ExtResource("4_5n4ms")]
+position = Vector2(47, 38)
+
+[node name="ShieldEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="18" unique_id=1620286663 instance=ExtResource("4_5n4ms")]
+position = Vector2(273, 38)
+
+[node name="ShieldEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="19" unique_id=2069409477 instance=ExtResource("4_5n4ms")]
+position = Vector2(288, 38)
+
+[node name="ShieldEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="20" unique_id=2042978405 instance=ExtResource("4_5n4ms")]
+position = Vector2(303, 38)
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="21" unique_id=172079501 instance=ExtResource("5_cwoyg")]
+position = Vector2(91, 37)
+
+[node name="SwordEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="22" unique_id=1982778817 instance=ExtResource("5_cwoyg")]
+position = Vector2(231, 37)
+
+[node name="TutorialMessages" parent="." index="4" unique_id=366902855]
+visible = false
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Get in Formation Army"
