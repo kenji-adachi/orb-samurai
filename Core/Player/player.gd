@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var playerSprite = $AnimatedSprite2D
 @onready var health = $HealthComponent
 @onready var slashSFX = $SlashSFX
+@onready var hitSFX = $HitSFX
+@onready var bodyAnimation = $BodyAnimation
 
 var currentAction = "none"
 
@@ -55,6 +57,8 @@ func slash():
 
 func damage(amount: float):
 	health.take_damage(amount)
+	bodyAnimation.play("hit")
+	hitSFX.play()
 
 
 func _physics_process(delta):

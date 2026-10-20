@@ -20,6 +20,7 @@ position = Vector2(185, 50)
 position = Vector2(138, 50)
 
 [node name="Label" type="Label" parent="TutorialMessages" parent_id_path=PackedInt32Array(366902855) index="0" unique_id=2023200994]
+use_parent_material = true
 layout_mode = 0
 offset_left = 107.0
 offset_top = 81.0

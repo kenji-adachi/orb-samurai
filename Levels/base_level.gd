@@ -39,7 +39,7 @@ func _on_enemy_died():
 
 func _on_player_died():
 	StateMachine.change_state(StateMachine.State.LEVEL_TRANSITION)
-	EventBus.level_complete.emit()
+	EventBus.level_lost.emit()
 	tutorialLabels.hide()
 	levelLostUI.show()
 
@@ -52,7 +52,7 @@ func checkLevelComplete():
 	
 	if enemiesRemaining <= 0:
 		StateMachine.change_state(StateMachine.State.LEVEL_TRANSITION)
-		EventBus.level_complete.emit()
+		EventBus.level_complete.emit(ResourceUID.path_to_uid(self.scene_file_path))
 		tutorialLabels.hide()
 		levelCompleteUI.show()
 

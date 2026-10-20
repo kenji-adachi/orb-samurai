@@ -4,7 +4,10 @@ extends Node
 signal level_change(currentLevel: String)
 
 #Level Complete
-signal level_complete
+signal level_complete(currentLevel: String)
+
+#Level Lost
+signal level_lost
 
 #Start the game
 signal start_game
@@ -32,3 +35,6 @@ signal buttonPress
 
 #Challenge Level
 signal challenge
+
+#Reset Save
+signal save_reset

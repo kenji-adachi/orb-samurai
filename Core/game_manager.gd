@@ -6,6 +6,7 @@ extends Node
 @onready var world_manager = $World2D
 @onready var ui_manager = $UIManager
 @onready var level_manager = $World2D/LevelManager
+@onready var colorFilter = $CanvasModulate
 @onready var playerCoreScene = preload("uid://c6uo7r5ra3ok2")
 @onready var endGameScreen = preload("uid://kj5usds7ae6p")
 
@@ -21,6 +22,10 @@ var current_level_scene : Node2D = null
 var current_level_index : int = 1
 var playerCore : Node2D = null
 var playingChallenge = false
+var highest_level := 1
+var game_complete := false
+const DAY_COLOR   = Color(0.84, 0.904, 0.969) # Day Time
+const NIGHT_COLOR = Color(0.082, 0.188, 0.286) #Night Time
 
 # list of levels
 const level_reference : Dictionary = {
@@ -51,9 +56,15 @@ const ui_reference : Dictionary = {
 func _ready():
 	initialize_game()
 	initialize_connections()
+	colorFilter.color = NIGHT_COLOR
 
 
 func initialize_game():
+	SaveManager.load_game()
+	game_complete = SaveManager.save_data.game_completed
+	highest_level = SaveManager.save_data.highest_level
+	current_level_index = highest_level
+	StateMachine.game_won = game_complete
 	load_ui_scene(ui_reference["mainMenu"])
 	gameMusic.stop()
 	menuMusic.play()
@@ -63,11 +74,14 @@ func initialize_connections():
 	EventBus.level_change.connect(_on_level_changed)
 	EventBus.start_game.connect(_on_start_game)
 	EventBus.level_complete.connect(_on_level_complete)
+	EventBus.level_lost.connect(_on_level_lost)
 	EventBus.retry_level.connect(_on_level_retry)
 	EventBus.reset_game.connect(_on_reset_game)
 	EventBus.buttonPress.connect(_on_button_press)
 	EventBus.challenge.connect(_on_challenge_start)
+	EventBus.save_reset.connect(_on_save_reset)
 	StateMachine.state_changed.connect(_on_state_changed)
+	
 
 #player core runs everything related to the player and the ball
 func load_player_core():
@@ -91,6 +105,7 @@ func load_level_scene(new_scene : String = "", delete: bool = true, keep_running
 		var new = load(new_scene).instantiate()
 		level_manager.add_child(new)
 		current_level_scene = new
+		
 
 
 func load_ui_scene(new_scene : String = "", delete: bool = true, keep_running: bool = false):
@@ -106,6 +121,9 @@ func load_ui_scene(new_scene : String = "", delete: bool = true, keep_running: b
 		ui_manager.add_child(new)
 		current_ui_scene = new
 
+func update_time_of_day(currentLevelIndex: int):
+	var colorScale: float = (currentLevelIndex - 1) / 13.0
+	colorFilter.color = DAY_COLOR.lerp(NIGHT_COLOR, colorScale)
 
 func level_transition():
 	if StateMachine.current_state != StateMachine.State.LEVEL_TRANSITION:
@@ -116,12 +134,22 @@ func level_transition():
 #signal event bus functions
 func _on_start_game():
 	load_player_core()
-	load_level_scene("uid://c0uvasppuqvsi")
+	update_time_of_day(highest_level)
+	load_level_scene(level_reference[highest_level])
 	StateMachine.change_state(StateMachine.State.WAITING)
 	menuMusic.stop()
 	gameMusic.play()
 
-func _on_level_complete():
+func _on_level_complete(currentLevel: String):
+	level_transition()
+	var level_index = level_reference.find_key(currentLevel)
+	if level_index >= level_reference.size(): # Game Complete, no level past highest level
+		SaveManager.save_data.highest_level = level_index
+	else: # Set highest level to the level after completed level
+		SaveManager.save_data.highest_level = level_index + 1
+	SaveManager.save_game()
+
+func _on_level_lost():
 	level_transition()
 
 func _on_level_retry(currentLevel: String):
@@ -143,9 +171,13 @@ func _on_level_changed(currentLevel: String):
 		EventBus.endGame.emit()
 		StateMachine.game_won = true
 		load_ui_scene(ui_reference["endGame"])
+		SaveManager.save_data.game_completed = true
+		SaveManager.save_game()
 		
 	else: # go to next level
+		current_level_index = level_index + 1
 		load_player_core()
+		update_time_of_day(level_index + 1)
 		load_level_scene(level_reference[level_index + 1])
 		StateMachine.change_state(StateMachine.State.WAITING)
 
@@ -156,12 +188,20 @@ func _on_button_press():
 	buttonSFX.play()
 
 func _on_state_changed(newState: StateMachine.State):
-	print("State: " + str(newState))
+	print("State: " + StateMachine.State.keys()[newState])
 
 func _on_challenge_start():
 	load_player_core()
 	load_level_scene(challengeLevel)
+	update_time_of_day(level_reference.size())
 	StateMachine.change_state(StateMachine.State.WAITING)
 	menuMusic.stop()
 	gameMusic.play()
 	playingChallenge = true
+
+func _on_save_reset():
+	current_ui_scene.queue_free()
+	game_complete = SaveManager.save_data.game_completed
+	highest_level = SaveManager.save_data.highest_level
+	StateMachine.game_won = game_complete
+	load_ui_scene(ui_reference["mainMenu"])

@@ -118,6 +118,39 @@ _data = {
 &"spawn": SubResource("Animation_brbf1")
 }
 
+[sub_resource type="Gradient" id="Gradient_244pw"]
+offsets = PackedFloat32Array(0, 0.44578314, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.8915663, 0.8915663, 0.8915663, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aymfs"]
+gradient = SubResource("Gradient_244pw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_skrjv"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_aymfs"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o4sfh"]
+gradient = SubResource("Gradient_aymfs")
+
+[sub_resource type="Curve" id="Curve_kv6v2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s1lpj"]
+curve = SubResource("Curve_kv6v2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skrjv"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_s1lpj")
+color = Color(0.6968204, 0.9999997, 0.9954528, 1)
+color_ramp = SubResource("GradientTexture1D_o4sfh")
+
 [node name="GameBall" type="CharacterBody2D" unique_id=1923814879 groups=["Ball"]]
 collision_layer = 2
 collision_mask = 77
@@ -147,3 +180,15 @@ pitch_scale = 0.2
 [node name="WallHit" type="AudioStreamPlayer2D" parent="." unique_id=2107696386]
 stream = ExtResource("5_aymfs")
 max_polyphony = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1921716822]
+position = Vector2(2.9802322e-08, -2.3841858e-07)
+scale = Vector2(0.93750006, 0.93749994)
+texture = SubResource("GradientTexture2D_aymfs")
+texture_scale = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=702996500]
+material = SubResource("CanvasItemMaterial_skrjv")
+amount = 50
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_skrjv")

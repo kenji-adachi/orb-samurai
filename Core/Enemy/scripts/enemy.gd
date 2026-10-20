@@ -10,6 +10,7 @@ signal enemyDied
 @onready var bodyAnimator = $BodyAnimation
 @onready var itemAnimator = $ItemAnimation
 @onready var bodyHitSFX = $BodyHitSFX
+@onready var particles = $GPUParticles2D
 
 
 func _ready():
@@ -19,6 +20,7 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	bodyHitSFX.play(0.11)
 	hitFlash()
+	particles.emitting = true
 	health.take_damage(100)
 
 

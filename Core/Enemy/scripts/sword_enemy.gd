@@ -11,6 +11,7 @@ func _on_area_2d_body_entered(body):
 		swordHealth -= 100
 		swordBreakSFX.play(0.10)
 		hitFlash()
+		particles.emitting = true
 		body.raiseSpeed(100)
 		if swordHealth <= 0:
 			swordEquipped = false

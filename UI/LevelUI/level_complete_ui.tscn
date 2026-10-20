@@ -2,8 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="1_3jrnf"]
 [ext_resource type="Script" uid="uid://1h3h75y4p6oq" path="res://UI/LevelUI/level_complete_ui.gd" id="1_5u10e"]
+[ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="1_55mpp"]
 
 [node name="LevelCompleteUI" type="Control" unique_id=1829127618]
+material = ExtResource("1_55mpp")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +16,7 @@ theme = ExtResource("1_3jrnf")
 script = ExtResource("1_5u10e")
 
 [node name="NextLevelButton" type="Button" parent="." unique_id=508311671]
+material = ExtResource("1_55mpp")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,6 +32,7 @@ grow_vertical = 2
 text = "NEXT LEVEL"
 
 [node name="LevelCompleteLabel" type="Label" parent="." unique_id=272306271]
+material = ExtResource("1_55mpp")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -8,34 +8,46 @@
 
 [node name="LevelEliteArcher" unique_id=181910146 instance=ExtResource("1_6bire")]
 
-[node name="EliteBowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_o0gut")]
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2033822043 instance=ExtResource("5_8cr23")]
+position = Vector2(47, 59)
+
+[node name="SwordEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=572244022 instance=ExtResource("5_8cr23")]
+position = Vector2(276, 59)
+
+[node name="BowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=125356692 instance=ExtResource("4_el3cy")]
+position = Vector2(125, 41)
+
+[node name="BowEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=2011942484 instance=ExtResource("4_el3cy")]
+position = Vector2(197, 41)
+
+[node name="EliteBowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=2094694508 instance=ExtResource("2_o0gut")]
 position = Vector2(161, 19)
 
-[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=1437647939 instance=ExtResource("3_q1r6u")]
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=1437647939 instance=ExtResource("3_q1r6u")]
 position = Vector2(147, 36)
 
-[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=167790234 instance=ExtResource("3_q1r6u")]
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=167790234 instance=ExtResource("3_q1r6u")]
 position = Vector2(161, 36)
 
-[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=415846709 instance=ExtResource("3_q1r6u")]
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=415846709 instance=ExtResource("3_q1r6u")]
 position = Vector2(175, 37)
 
-[node name="ShieldEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=807471613 instance=ExtResource("3_q1r6u")]
+[node name="ShieldEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=807471613 instance=ExtResource("3_q1r6u")]
 position = Vector2(147, 18)
 
-[node name="ShieldEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=727741205 instance=ExtResource("3_q1r6u")]
+[node name="ShieldEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=727741205 instance=ExtResource("3_q1r6u")]
 position = Vector2(175, 19)
 
-[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=620963133 instance=ExtResource("4_el3cy")]
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="10" unique_id=620963133 instance=ExtResource("4_el3cy")]
 position = Vector2(39, 41)
 
-[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=1557988114 instance=ExtResource("4_el3cy")]
+[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="11" unique_id=1557988114 instance=ExtResource("4_el3cy")]
 position = Vector2(55, 41)
 
-[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=1317134304 instance=ExtResource("4_el3cy")]
+[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="12" unique_id=1317134304 instance=ExtResource("4_el3cy")]
 position = Vector2(268, 41)
 
-[node name="BowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=77278687 instance=ExtResource("4_el3cy")]
+[node name="BowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="13" unique_id=77278687 instance=ExtResource("4_el3cy")]
 position = Vector2(284, 41)
 
 [node name="StartLabel" parent="." index="5" unique_id=796419420]
@@ -47,15 +59,3 @@ text = "- Good Luck -"
 
 [node name="LevelName" parent="." index="7" unique_id=1808785625]
 text = "The Boss Archer"
-
-[node name="SwordEnemy" parent="." index="8" unique_id=2033822043 instance=ExtResource("5_8cr23")]
-position = Vector2(47, 59)
-
-[node name="SwordEnemy2" parent="." index="9" unique_id=572244022 instance=ExtResource("5_8cr23")]
-position = Vector2(276, 59)
-
-[node name="BowEnemy" parent="." index="10" unique_id=125356692 instance=ExtResource("4_el3cy")]
-position = Vector2(125, 41)
-
-[node name="BowEnemy2" parent="." index="11" unique_id=2011942484 instance=ExtResource("4_el3cy")]
-position = Vector2(197, 41)

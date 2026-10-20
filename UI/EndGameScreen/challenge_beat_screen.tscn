@@ -12,6 +12,7 @@ offset_bottom = 88.0
 text = "Thank you For Playing Again"
 
 [node name="Label2" type="Label" parent="." index="1" unique_id=1454702092]
+use_parent_material = true
 layout_mode = 0
 offset_left = 54.0
 offset_top = 42.0

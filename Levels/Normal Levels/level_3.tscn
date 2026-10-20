@@ -24,3 +24,6 @@ position = Vector2(99, 59)
 
 [node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=1784695333 instance=ExtResource("4_jtv30")]
 position = Vector2(221, 59)
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Castle Wall"

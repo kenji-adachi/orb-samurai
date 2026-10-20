@@ -164,6 +164,48 @@ _data = {
 &"dropItem": SubResource("Animation_ufmk8")
 }
 
+[sub_resource type="Gradient" id="Gradient_pqhtm"]
+offsets = PackedFloat32Array(0, 0.30120483, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.93373495, 0.93373495, 0.93373495, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_skrjv"]
+gradient = SubResource("Gradient_pqhtm")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_244pw"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pqhtm"]
+gradient = SubResource("Gradient_244pw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wgabf"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_s1lpj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skrjv"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_curve = SubResource("CurveTexture_s1lpj")
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+damping_min = 10.0
+damping_max = 50.000004
+color = Color(0.9875, 1, 0.85, 0.7529412)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=2094694508 groups=["Enemies"]]
 collision_layer = 8
 collision_mask = 2
@@ -197,6 +239,32 @@ libraries/ = SubResource("AnimationLibrary_2hg5x")
 
 [node name="BodyHitSFX" type="AudioStreamPlayer2D" parent="." unique_id=1888501188]
 stream = ExtResource("5_pqhtm")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1454852679]
+position = Vector2(-2.5, -2.5)
+scale = Vector2(0.015625002, 0.015625002)
+color = Color(0.94036186, 5.3425133e-06, 3.85046e-07, 1)
+texture = SubResource("GradientTexture2D_skrjv")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1727033082]
+position = Vector2(2.5, -2.5)
+scale = Vector2(0.015624998, 0.015624998)
+color = Color(0.94036186, 5.3425133e-06, 3.85046e-07, 1)
+texture = SubResource("GradientTexture2D_skrjv")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=516350438]
+color = Color(0.46, 0, 0, 1)
+texture = SubResource("GradientTexture2D_pqhtm")
+texture_scale = 0.3
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=482672325]
+material = SubResource("CanvasItemMaterial_wgabf")
+emitting = false
+amount = 15
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_skrjv")
 
 [connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

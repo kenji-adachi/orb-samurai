@@ -2,15 +2,22 @@
 
 [ext_resource type="Script" uid="uid://dlgwyirp2owi2" path="res://Core/Player/player.gd" id="1_4f62b"]
 [ext_resource type="Texture2D" uid="uid://dhnh3fj4jwjjr" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterIdle.png" id="1_so0u2"]
+[ext_resource type="Shader" uid="uid://bcjm72npoebtv" path="res://Core/Enemy/art/enemy.gdshader" id="2_46g0b"]
 [ext_resource type="Texture2D" uid="uid://cuflxsin3cyxj" path="res://Core/Player/SpriteSheet/SamuraiForwardCharacterSlash.png" id="3_jf5bi"]
 [ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="4_jf5bi"]
 [ext_resource type="AudioStream" uid="uid://cpj44ay4hss7r" path="res://Resources/Sounds/SFX/drawKnife3.ogg" id="5_imt68"]
+[ext_resource type="Texture2D" uid="uid://bwyerbe1bm0dx" path="res://Resources/Lighting/basic_lighting.tres" id="6_4uhok"]
+[ext_resource type="AudioStream" uid="uid://0rn1i34grrr6" path="res://Resources/Sounds/SFX/impactSoft_heavy_003.ogg" id="8_5yj4d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfjle"]
 radius = 7.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jf5bi"]
 radius = 8.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aymfs"]
+shader = ExtResource("2_46g0b")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf5bi"]
 atlas = ExtResource("1_so0u2")
@@ -123,6 +130,43 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Animation" id="Animation_5yj4d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:instance_shader_parameters/flash_percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7ng65"]
+resource_name = "hit"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:instance_shader_parameters/flash_percentage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cx3fm"]
+_data = {
+&"RESET": SubResource("Animation_5yj4d"),
+&"hit": SubResource("Animation_7ng65")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=2127532797]
 collision_mask = 32
 script = ExtResource("1_4f62b")
@@ -140,6 +184,8 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_jf5bi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1191709835]
+material = SubResource("ShaderMaterial_aymfs")
+instance_shader_parameters/flash_percentage = 0.0
 position = Vector2(0, -3)
 scale = Vector2(0.78125, 0.78125)
 sprite_frames = SubResource("SpriteFrames_jdipi")
@@ -153,6 +199,18 @@ position = Vector2(0, -15)
 
 [node name="SlashSFX" type="AudioStreamPlayer2D" parent="." unique_id=536466408]
 stream = ExtResource("5_imt68")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1468019588]
+color = Color(0.87856454, 0.47949463, 1.347661e-06, 1)
+texture = ExtResource("6_4uhok")
+
+[node name="BodyAnimation" type="AnimationPlayer" parent="." unique_id=990514711]
+libraries/ = SubResource("AnimationLibrary_cx3fm")
+
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="." unique_id=2033704212]
+stream = ExtResource("8_5yj4d")
+volume_db = 3.0
+pitch_scale = 0.75
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]

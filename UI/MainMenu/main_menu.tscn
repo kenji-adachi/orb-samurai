@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://bsrb141u3qb52" path="res://UI/MainMenu/SamuraiMainMenuBackgroundOrbAnimation.png" id="3_trkrl"]
 [ext_resource type="Texture2D" uid="uid://mrangoyiq38x" path="res://UI/MainMenu/SamuraiMainMenuBackgroundFlagAnimation.png" id="4_bddxb"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skrjv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1lpj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyy2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4sfh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36aod"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_iau2q"]
 atlas = ExtResource("3_trkrl")
 region = Rect2(0, 0, 320, 180)
@@ -77,6 +87,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_244pw"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iyy2y"]
+gradient = SubResource("Gradient_244pw")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwn5o"]
 atlas = ExtResource("4_bddxb")
 region = Rect2(0, 0, 320, 180)
@@ -106,7 +125,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_iyy2y"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pamtx"]
+gradient = SubResource("Gradient_iyy2y")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="MainMenu" type="Control" unique_id=319366454]
+use_parent_material = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,18 +147,41 @@ script = ExtResource("1_h8rmy")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=50793661]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 320.0
+offset_bottom = 180.0
 texture = ExtResource("2_iyy2y")
 
+[node name="ResetSaveButton" type="Button" parent="." unique_id=2104094444]
+use_parent_material = true
+layout_mode = 0
+offset_left = 284.0
+offset_top = 170.0
+offset_right = 316.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0.1882353, 0.20392157, 0.09019608, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxEmpty_skrjv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s1lpj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iyy2y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_o4sfh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_36aod")
+text = "RESET SAVE"
+
 [node name="OrbAnimation" type="AnimatedSprite2D" parent="." unique_id=1262626141]
+use_parent_material = true
 position = Vector2(160, 90)
 sprite_frames = SubResource("SpriteFrames_xron6")
 animation = &"orb"
 frame = 2
 frame_progress = 0.0024151339
 
+[node name="PointLight2D3" type="PointLight2D" parent="OrbAnimation" unique_id=1259203485]
+position = Vector2(78, -41)
+texture = SubResource("GradientTexture2D_iyy2y")
+
 [node name="FlagAnimation" type="AnimatedSprite2D" parent="." unique_id=1080086605]
+use_parent_material = true
 position = Vector2(160, 90)
 sprite_frames = SubResource("SpriteFrames_myei6")
 animation = &"flags"
@@ -137,34 +189,26 @@ frame = 2
 frame_progress = 0.64668965
 
 [node name="StartGameButton" type="Button" parent="." unique_id=2061615569]
+use_parent_material = true
 layout_mode = 0
 offset_left = 113.0
 offset_top = 98.0
-offset_right = 214.0
+offset_right = 219.0
 offset_bottom = 134.0
 text = "START GAME"
 
-[node name="ChallengeLevelButton" type="Button" parent="." unique_id=651185788]
+[node name="ContinueGameButton" type="Button" parent="." unique_id=2004857810]
 visible = false
+use_parent_material = true
 layout_mode = 0
-offset_left = 95.0
-offset_top = 60.0
-offset_right = 231.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.88, 0, 0.014666443, 1)
-theme_override_colors/font_pressed_color = Color(0.8784314, 0, 0.015686275, 1)
-theme_override_colors/font_hover_color = Color(0.8784314, 0, 0.015686275, 1)
-text = "CHALLENGE LEVEL"
-
-[node name="QuitGameButton" type="Button" parent="." unique_id=2022870727]
-layout_mode = 0
-offset_left = 118.0
-offset_top = 137.0
-offset_right = 208.0
-offset_bottom = 173.0
-text = "QUIT GAME"
+offset_left = 106.0
+offset_top = 99.0
+offset_right = 227.0
+offset_bottom = 135.0
+text = "CONTINUE GAME"
 
 [node name="Label" type="Label" parent="." unique_id=2128424810]
+use_parent_material = true
 layout_mode = 0
 offset_left = 108.0
 offset_top = 39.0
@@ -176,7 +220,50 @@ theme_override_colors/font_outline_color = Color(0.4296193, 4.2716042e-07, 1.684
 theme_override_font_sizes/font_size = 24
 text = "ORB SAMURAI"
 
+[node name="ChallengeLevelButton" type="Button" parent="." unique_id=651185788]
+visible = false
+use_parent_material = true
+layout_mode = 0
+offset_left = 95.0
+offset_top = 60.0
+offset_right = 245.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.88, 0, 0.014666443, 1)
+theme_override_colors/font_pressed_color = Color(0.8784314, 0, 0.015686275, 1)
+theme_override_colors/font_hover_color = Color(0.8784314, 0, 0.015686275, 1)
+text = "CHALLENGE LEVEL"
+
+[node name="QuitGameButton" type="Button" parent="." unique_id=2022870727]
+use_parent_material = true
+layout_mode = 0
+offset_left = 118.0
+offset_top = 137.0
+offset_right = 215.0
+offset_bottom = 173.0
+text = "QUIT GAME"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1852467352]
+position = Vector2(80.75, 72.25)
+scale = Vector2(0.05468756, 0.0859375)
+color = Color(0.6949373, 0.23219374, 0, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_pamtx")
+texture_scale = 2.25
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=757858926]
+position = Vector2(61, 74)
+scale = Vector2(0.05468756, 0.0859375)
+color = Color(0.6949373, 0.23219374, 0, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_pamtx")
+texture_scale = 2.25
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1059112706]
+color = Color(0.9671125, 0.58050114, 0.33724746, 1)
+
+[connection signal="pressed" from="ResetSaveButton" to="." method="_on_reset_save_button_pressed"]
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="ContinueGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="mouse_entered" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_mouse_entered"]
 [connection signal="mouse_exited" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_mouse_exited"]
 [connection signal="pressed" from="ChallengeLevelButton" to="." method="_on_challenge_level_button_pressed"]

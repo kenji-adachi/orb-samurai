@@ -16,6 +16,9 @@ func _ready():
 	challengeButton.hide()
 	if StateMachine.game_won:
 		challengeButton.show()
+	if SaveManager.save_data.highest_level > 1:
+		$StartGameButton.hide()
+		$ContinueGameButton.show()
 
 
 func _on_start_game_button_pressed():
@@ -49,3 +52,7 @@ func _on_challenge_level_button_mouse_entered():
 
 func _on_challenge_level_button_mouse_exited():
 	fade_to_color(Color(1, 1, 1, 1))
+
+
+func _on_reset_save_button_pressed():
+	SaveManager.reset_save_data()

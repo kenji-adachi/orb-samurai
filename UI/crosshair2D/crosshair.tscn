@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bqlay5gsp6w3o"]
 
+[ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="1_14ryy"]
 [ext_resource type="Script" uid="uid://2c3as53st4bq" path="res://UI/crosshair2D/crosshair.gd" id="1_15qdt"]
 [ext_resource type="Texture2D" uid="uid://dlyava6s4eqph" path="res://UI/crosshair2D/simpleCrosshairWhite.png" id="1_mwaau"]
 
@@ -42,12 +43,14 @@ _data = {
 }
 
 [node name="Crosshair" type="Node2D" unique_id=775337758]
+material = ExtResource("1_14ryy")
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_15qdt")
 maxConstraint = Vector2(10000, 125)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1773512790]
 self_modulate = Color(1, 1, 1, 0.7176471)
+material = ExtResource("1_14ryy")
 texture = ExtResource("1_mwaau")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2058822587]

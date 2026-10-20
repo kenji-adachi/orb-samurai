@@ -18,6 +18,12 @@ size = Vector2(336, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82075"]
 size = Vector2(16, 22)
 
+[sub_resource type="Gradient" id="Gradient_31560"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_skrjv"]
+gradient = SubResource("Gradient_31560")
+
 [node name="MainMap" type="Node2D" unique_id=1927318716]
 z_index = -5
 
@@ -62,3 +68,23 @@ shape = SubResource("RectangleShape2D_82075")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerBouinds" unique_id=1126976751]
 position = Vector2(324, 169)
 shape = SubResource("RectangleShape2D_82075")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=116260499]
+position = Vector2(4.5, 82)
+scale = Vector2(0.390625, 3.5625)
+color = Color(1, 0.4666667, 0, 1)
+texture = SubResource("GradientTexture2D_skrjv")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=274522887]
+position = Vector2(316, 86.00001)
+rotation = 3.1415927
+scale = Vector2(0.390625, 3.5625)
+color = Color(1, 0.4666667, 0, 1)
+texture = SubResource("GradientTexture2D_skrjv")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1449686085]
+position = Vector2(160.15933, 2.9999924)
+rotation = 1.5707964
+scale = Vector2(0.390625, 5.2402906)
+color = Color(1, 0.4666667, 0, 1)
+texture = SubResource("GradientTexture2D_skrjv")

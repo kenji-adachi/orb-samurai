@@ -13,3 +13,6 @@ position = Vector2(147, 18)
 
 [node name="SwordEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=834817723 instance=ExtResource("2_iivmy")]
 position = Vector2(175, 18)
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Knights Charge"

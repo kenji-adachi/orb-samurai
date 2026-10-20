@@ -8,19 +8,127 @@
 
 [node name="ChallengeLevel" unique_id=181910146 instance=ExtResource("1_dufpy")]
 
-[node name="EliteBowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_icayw")]
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=1462841161 instance=ExtResource("3_udv0k")]
+position = Vector2(161, 37)
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=1332222585 instance=ExtResource("3_udv0k")]
+position = Vector2(145, 37)
+
+[node name="ShieldEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=1575298686 instance=ExtResource("3_udv0k")]
+position = Vector2(130, 37)
+
+[node name="ShieldEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=436423377 instance=ExtResource("3_udv0k")]
+position = Vector2(114, 37)
+
+[node name="ShieldEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=1164652101 instance=ExtResource("3_udv0k")]
+position = Vector2(208, 37)
+
+[node name="ShieldEnemy13" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=570286536 instance=ExtResource("3_udv0k")]
+position = Vector2(192, 37)
+
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=330524541 instance=ExtResource("3_udv0k")]
+position = Vector2(177, 37)
+
+[node name="ShieldEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="7" unique_id=1716513050 instance=ExtResource("3_udv0k")]
+position = Vector2(240, 37)
+
+[node name="ShieldEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="8" unique_id=403028847 instance=ExtResource("3_udv0k")]
+position = Vector2(224, 37)
+
+[node name="ShieldEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="9" unique_id=1712339338 instance=ExtResource("3_udv0k")]
+position = Vector2(256, 37)
+
+[node name="ShieldEnemy14" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="10" unique_id=1189996862 instance=ExtResource("3_udv0k")]
+position = Vector2(288, 37)
+
+[node name="ShieldEnemy15" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="11" unique_id=221659117 instance=ExtResource("3_udv0k")]
+position = Vector2(272, 37)
+
+[node name="ShieldEnemy16" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="12" unique_id=2126615060 instance=ExtResource("3_udv0k")]
+position = Vector2(304, 37)
+
+[node name="ShieldEnemy17" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="13" unique_id=532518876 instance=ExtResource("3_udv0k")]
+position = Vector2(35, 37)
+
+[node name="ShieldEnemy18" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="14" unique_id=522690943 instance=ExtResource("3_udv0k")]
+position = Vector2(19, 37)
+
+[node name="ShieldEnemy19" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="15" unique_id=250848716 instance=ExtResource("3_udv0k")]
+position = Vector2(51, 37)
+
+[node name="ShieldEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="16" unique_id=1088722811 instance=ExtResource("3_udv0k")]
+position = Vector2(83, 37)
+
+[node name="ShieldEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="17" unique_id=2122826301 instance=ExtResource("3_udv0k")]
+position = Vector2(67, 37)
+
+[node name="ShieldEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="18" unique_id=1245552644 instance=ExtResource("3_udv0k")]
+position = Vector2(99, 37)
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="19" unique_id=1021977279 instance=ExtResource("4_p5hdd")]
+position = Vector2(32, 19)
+
+[node name="BowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="20" unique_id=882777268 instance=ExtResource("4_p5hdd")]
+position = Vector2(48, 19)
+
+[node name="BowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="21" unique_id=2078119279 instance=ExtResource("4_p5hdd")]
+position = Vector2(64, 19)
+
+[node name="BowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="22" unique_id=1003315925 instance=ExtResource("4_p5hdd")]
+position = Vector2(106, 19)
+
+[node name="BowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="23" unique_id=219899140 instance=ExtResource("4_p5hdd")]
+position = Vector2(122, 19)
+
+[node name="BowEnemy6" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="24" unique_id=2006927619 instance=ExtResource("4_p5hdd")]
+position = Vector2(138, 19)
+
+[node name="BowEnemy7" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="25" unique_id=1633098311 instance=ExtResource("4_p5hdd")]
+position = Vector2(187, 20)
+
+[node name="BowEnemy8" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="26" unique_id=1691676495 instance=ExtResource("4_p5hdd")]
+position = Vector2(203, 20)
+
+[node name="BowEnemy9" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="27" unique_id=213522575 instance=ExtResource("4_p5hdd")]
+position = Vector2(219, 20)
+
+[node name="BowEnemy10" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="28" unique_id=20849791 instance=ExtResource("4_p5hdd")]
+position = Vector2(256, 19)
+
+[node name="BowEnemy11" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="29" unique_id=1052514953 instance=ExtResource("4_p5hdd")]
+position = Vector2(272, 19)
+
+[node name="BowEnemy12" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="30" unique_id=2109475862 instance=ExtResource("4_p5hdd")]
+position = Vector2(288, 19)
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="31" unique_id=37546845 instance=ExtResource("5_vrs1t")]
+position = Vector2(39, 71)
+
+[node name="SwordEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="32" unique_id=104549122 instance=ExtResource("5_vrs1t")]
+position = Vector2(284, 70)
+
+[node name="SwordEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="33" unique_id=1960586557 instance=ExtResource("5_vrs1t")]
+position = Vector2(160, 97)
+
+[node name="SwordEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="34" unique_id=1543388093 instance=ExtResource("5_vrs1t")]
+position = Vector2(97, 88)
+
+[node name="SwordEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="35" unique_id=1556509812 instance=ExtResource("5_vrs1t")]
+position = Vector2(229, 89)
+
+[node name="EliteBowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="36" unique_id=2094694508 instance=ExtResource("2_icayw")]
 position = Vector2(161, 19)
 
-[node name="EliteBowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=984468386 instance=ExtResource("2_icayw")]
+[node name="EliteBowEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="37" unique_id=984468386 instance=ExtResource("2_icayw")]
 position = Vector2(15, 18)
 
-[node name="EliteBowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=2008512949 instance=ExtResource("2_icayw")]
+[node name="EliteBowEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="38" unique_id=2008512949 instance=ExtResource("2_icayw")]
 position = Vector2(305, 18)
 
-[node name="EliteBowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=2119139417 instance=ExtResource("2_icayw")]
+[node name="EliteBowEnemy4" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="39" unique_id=2119139417 instance=ExtResource("2_icayw")]
 position = Vector2(83, 18)
 
-[node name="EliteBowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=1738581951 instance=ExtResource("2_icayw")]
+[node name="EliteBowEnemy5" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="40" unique_id=1738581951 instance=ExtResource("2_icayw")]
 position = Vector2(240, 18)
 
 [node name="TutorialMessages" parent="." index="4" unique_id=366902855]
@@ -28,111 +136,3 @@ visible = false
 
 [node name="LevelName" parent="." index="7" unique_id=1808785625]
 text = "Impossible Challenge"
-
-[node name="ShieldEnemy" parent="." index="8" unique_id=1462841161 instance=ExtResource("3_udv0k")]
-position = Vector2(161, 37)
-
-[node name="ShieldEnemy2" parent="." index="9" unique_id=1332222585 instance=ExtResource("3_udv0k")]
-position = Vector2(145, 37)
-
-[node name="ShieldEnemy10" parent="." index="10" unique_id=1575298686 instance=ExtResource("3_udv0k")]
-position = Vector2(130, 37)
-
-[node name="ShieldEnemy11" parent="." index="11" unique_id=436423377 instance=ExtResource("3_udv0k")]
-position = Vector2(114, 37)
-
-[node name="ShieldEnemy12" parent="." index="12" unique_id=1164652101 instance=ExtResource("3_udv0k")]
-position = Vector2(208, 37)
-
-[node name="ShieldEnemy13" parent="." index="13" unique_id=570286536 instance=ExtResource("3_udv0k")]
-position = Vector2(192, 37)
-
-[node name="ShieldEnemy3" parent="." index="14" unique_id=330524541 instance=ExtResource("3_udv0k")]
-position = Vector2(177, 37)
-
-[node name="ShieldEnemy4" parent="." index="15" unique_id=1716513050 instance=ExtResource("3_udv0k")]
-position = Vector2(240, 37)
-
-[node name="ShieldEnemy5" parent="." index="16" unique_id=403028847 instance=ExtResource("3_udv0k")]
-position = Vector2(224, 37)
-
-[node name="ShieldEnemy6" parent="." index="17" unique_id=1712339338 instance=ExtResource("3_udv0k")]
-position = Vector2(256, 37)
-
-[node name="ShieldEnemy14" parent="." index="18" unique_id=1189996862 instance=ExtResource("3_udv0k")]
-position = Vector2(288, 37)
-
-[node name="ShieldEnemy15" parent="." index="19" unique_id=221659117 instance=ExtResource("3_udv0k")]
-position = Vector2(272, 37)
-
-[node name="ShieldEnemy16" parent="." index="20" unique_id=2126615060 instance=ExtResource("3_udv0k")]
-position = Vector2(304, 37)
-
-[node name="ShieldEnemy17" parent="." index="21" unique_id=532518876 instance=ExtResource("3_udv0k")]
-position = Vector2(35, 37)
-
-[node name="ShieldEnemy18" parent="." index="22" unique_id=522690943 instance=ExtResource("3_udv0k")]
-position = Vector2(19, 37)
-
-[node name="ShieldEnemy19" parent="." index="23" unique_id=250848716 instance=ExtResource("3_udv0k")]
-position = Vector2(51, 37)
-
-[node name="ShieldEnemy7" parent="." index="24" unique_id=1088722811 instance=ExtResource("3_udv0k")]
-position = Vector2(83, 37)
-
-[node name="ShieldEnemy8" parent="." index="25" unique_id=2122826301 instance=ExtResource("3_udv0k")]
-position = Vector2(67, 37)
-
-[node name="ShieldEnemy9" parent="." index="26" unique_id=1245552644 instance=ExtResource("3_udv0k")]
-position = Vector2(99, 37)
-
-[node name="BowEnemy" parent="." index="27" unique_id=1021977279 instance=ExtResource("4_p5hdd")]
-position = Vector2(32, 19)
-
-[node name="BowEnemy2" parent="." index="28" unique_id=882777268 instance=ExtResource("4_p5hdd")]
-position = Vector2(48, 19)
-
-[node name="BowEnemy3" parent="." index="29" unique_id=2078119279 instance=ExtResource("4_p5hdd")]
-position = Vector2(64, 19)
-
-[node name="BowEnemy4" parent="." index="30" unique_id=1003315925 instance=ExtResource("4_p5hdd")]
-position = Vector2(106, 19)
-
-[node name="BowEnemy5" parent="." index="31" unique_id=219899140 instance=ExtResource("4_p5hdd")]
-position = Vector2(122, 19)
-
-[node name="BowEnemy6" parent="." index="32" unique_id=2006927619 instance=ExtResource("4_p5hdd")]
-position = Vector2(138, 19)
-
-[node name="BowEnemy7" parent="." index="33" unique_id=1633098311 instance=ExtResource("4_p5hdd")]
-position = Vector2(187, 20)
-
-[node name="BowEnemy8" parent="." index="34" unique_id=1691676495 instance=ExtResource("4_p5hdd")]
-position = Vector2(203, 20)
-
-[node name="BowEnemy9" parent="." index="35" unique_id=213522575 instance=ExtResource("4_p5hdd")]
-position = Vector2(219, 20)
-
-[node name="BowEnemy10" parent="." index="36" unique_id=20849791 instance=ExtResource("4_p5hdd")]
-position = Vector2(256, 19)
-
-[node name="BowEnemy11" parent="." index="37" unique_id=1052514953 instance=ExtResource("4_p5hdd")]
-position = Vector2(272, 19)
-
-[node name="BowEnemy12" parent="." index="38" unique_id=2109475862 instance=ExtResource("4_p5hdd")]
-position = Vector2(288, 19)
-
-[node name="SwordEnemy" parent="." index="39" unique_id=37546845 instance=ExtResource("5_vrs1t")]
-position = Vector2(39, 71)
-
-[node name="SwordEnemy2" parent="." index="40" unique_id=104549122 instance=ExtResource("5_vrs1t")]
-position = Vector2(284, 70)
-
-[node name="SwordEnemy3" parent="." index="41" unique_id=1960586557 instance=ExtResource("5_vrs1t")]
-position = Vector2(160, 97)
-
-[node name="SwordEnemy4" parent="." index="42" unique_id=1543388093 instance=ExtResource("5_vrs1t")]
-position = Vector2(97, 88)
-
-[node name="SwordEnemy5" parent="." index="43" unique_id=1556509812 instance=ExtResource("5_vrs1t")]
-position = Vector2(229, 89)

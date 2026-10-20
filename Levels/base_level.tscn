@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://t3os7yrjh3fx" path="res://Resources/Maps/MainMap/MainMap.tscn" id="1_ujkqx"]
 [ext_resource type="PackedScene" uid="uid://dfbhl0114hugx" path="res://UI/LevelUI/level_complete_ui.tscn" id="2_3vydx"]
 [ext_resource type="PackedScene" uid="uid://bkflyobxcamqk" path="res://UI/LevelUI/level_lost_ui.tscn" id="4_ruyyf"]
+[ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="5_j3xrb"]
 [ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="5_m1e4t"]
 
 [node name="BaseLevel" type="Node2D" unique_id=181910146]
@@ -15,10 +16,10 @@ script = ExtResource("1_n4mxg")
 
 [node name="LevelCompleteUI" parent="." unique_id=1829127618 instance=ExtResource("2_3vydx")]
 visible = false
-offset_left = 161.0
-offset_top = 85.0
-offset_right = 161.0
-offset_bottom = 85.0
+offset_left = 163.0
+offset_top = 89.0
+offset_right = 163.0
+offset_bottom = 89.0
 
 [node name="LevelLostUI" parent="." unique_id=939275431 instance=ExtResource("4_ruyyf")]
 visible = false
@@ -29,21 +30,24 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="TutorialMessages" type="Control" parent="." unique_id=366902855]
+material = ExtResource("5_j3xrb")
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="StartLabel" type="Label" parent="." unique_id=796419420]
+material = ExtResource("5_j3xrb")
 offset_left = 137.0
 offset_top = 150.0
-offset_right = 182.0
+offset_right = 193.0
 offset_bottom = 158.0
 theme = ExtResource("5_m1e4t")
 theme_override_font_sizes/font_size = 8
 text = "- Click to Start -"
 
 [node name="Unstuck" type="Button" parent="." unique_id=1065820522]
+material = ExtResource("5_j3xrb")
 offset_left = 283.0
 offset_top = 155.0
 offset_right = 320.0
@@ -53,6 +57,7 @@ theme_override_font_sizes/font_size = 7
 text = "Unstuck"
 
 [node name="LevelName" type="Label" parent="." unique_id=1808785625]
+material = ExtResource("5_j3xrb")
 offset_left = 2.0
 offset_right = 107.0
 offset_bottom = 8.0

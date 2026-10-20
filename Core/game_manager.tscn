@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://db72hw7ro8qf6"]
 
 [ext_resource type="Script" uid="uid://dtljihunwlwpr" path="res://Core/game_manager.gd" id="1_rjcw1"]
+[ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="2_je7fb"]
 [ext_resource type="AudioStream" uid="uid://bdy31svka8bmn" path="res://Resources/Sounds/Music/Space Cadet.ogg" id="2_y10nc"]
 [ext_resource type="AudioStream" uid="uid://c53ysbg4wimdo" path="res://Resources/Sounds/Music/Retro Mystic.ogg" id="3_vwchc"]
 [ext_resource type="AudioStream" uid="uid://v7ts3gjhslt6" path="res://Resources/Sounds/UI SFX/confirmation_002.ogg" id="4_db0fk"]
@@ -13,6 +14,7 @@ script = ExtResource("1_rjcw1")
 [node name="LevelManager" type="Node2D" parent="World2D" unique_id=516036526]
 
 [node name="UIManager" type="Control" parent="." unique_id=1122569205]
+material = ExtResource("2_je7fb")
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -29,3 +31,6 @@ volume_db = -10.0
 
 [node name="ButtonPressSFX" type="AudioStreamPlayer2D" parent="." unique_id=1968079502]
 stream = ExtResource("4_db0fk")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=764604482]
+color = Color(0.84, 0.904, 0.969, 1)

@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.7", "Mobile")
 EventBus="*uid://b4slv0yytsc7x"
 StateMachine="*uid://cndoexsa204xl"
 Accesability="*uid://c71wummhmlbg2"
+SaveManager="*uid://c5r00eyj0sy0w"
 
 [display]
 
