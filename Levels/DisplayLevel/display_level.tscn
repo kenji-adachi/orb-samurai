@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://xvqtdmmjaaig"]
+
+[ext_resource type="PackedScene" uid="uid://cagrg0efsct2m" path="res://Levels/base_level.tscn" id="1_2bg4w"]
+[ext_resource type="PackedScene" uid="uid://xne27ih10ias" path="res://Core/Enemy/shieldEnemy.tscn" id="2_l117l"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_gcy0f"]
+[ext_resource type="PackedScene" uid="uid://d0ugjojarcpea" path="res://Core/Enemy/bow_enemy.tscn" id="4_sq5w0"]
+[ext_resource type="PackedScene" uid="uid://c0ipclmd4ccqr" path="res://Core/Enemy/sword_enemy.tscn" id="5_45nyj"]
+
+[node name="DisplayLevel" unique_id=181910146 instance=ExtResource("1_2bg4w")]
+
+[node name="ShieldEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="0" unique_id=2094694508 instance=ExtResource("2_l117l")]
+position = Vector2(162, 65)
+
+[node name="ShieldEnemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="1" unique_id=863700257 instance=ExtResource("2_l117l")]
+position = Vector2(146, 65)
+
+[node name="ShieldEnemy3" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="2" unique_id=1476340571 instance=ExtResource("2_l117l")]
+position = Vector2(178, 65)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="3" unique_id=1694905836 instance=ExtResource("3_gcy0f")]
+position = Vector2(118, 65)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="4" unique_id=1360042872 instance=ExtResource("3_gcy0f")]
+position = Vector2(204, 65)
+
+[node name="BowEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="5" unique_id=1523783529 instance=ExtResource("4_sq5w0")]
+position = Vector2(162, 45)
+
+[node name="SwordEnemy" parent="Enemies" parent_id_path=PackedInt32Array(500221723) index="6" unique_id=1012774082 instance=ExtResource("5_45nyj")]
+position = Vector2(162, 85)
+
+[node name="LevelName" parent="." index="7" unique_id=1808785625]
+text = "Try My Game! - Thanks"

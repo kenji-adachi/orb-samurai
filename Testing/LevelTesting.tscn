@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e4uhgux30ru0" path="res://Testing/level_testing.gd" id="1_5d6s3"]
 [ext_resource type="PackedScene" uid="uid://c6uo7r5ra3ok2" path="res://Core/game_player_core.tscn" id="1_6h3j3"]
-[ext_resource type="PackedScene" uid="uid://dqwkpj54l5xn6" path="res://Levels/Special Levels/challenge_level.tscn" id="4_5d6s3"]
+[ext_resource type="PackedScene" uid="uid://xvqtdmmjaaig" path="res://Levels/DisplayLevel/display_level.tscn" id="4_5d6s3"]
 [ext_resource type="AudioStream" uid="uid://c53ysbg4wimdo" path="res://Resources/Sounds/Music/Retro Mystic.ogg" id="4_b0v0i"]
 
 [node name="LevelTesting" type="Node2D" unique_id=1483796121]
@@ -14,4 +14,4 @@ script = ExtResource("1_5d6s3")
 stream = ExtResource("4_b0v0i")
 volume_db = -10.0
 
-[node name="ChallengeLevel" parent="." unique_id=181910146 instance=ExtResource("4_5d6s3")]
+[node name="DisplayLevel" parent="." unique_id=181910146 instance=ExtResource("4_5d6s3")]

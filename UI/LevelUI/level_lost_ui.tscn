@@ -46,12 +46,12 @@ text = "LEVEL LOST"
 [node name="Label2" type="Label" parent="." unique_id=738408675]
 material = ExtResource("1_mhqx5")
 layout_mode = 1
-offset_left = 26.0
+offset_left = 28.0
 offset_top = 147.0
-offset_right = 291.0
+offset_right = 293.0
 offset_bottom = 166.0
 theme_type_variation = &"LabelSmall"
-text = "(Progress Not Saved... Don't Give Up)"
+text = "(You can do it... Don't Give Up)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

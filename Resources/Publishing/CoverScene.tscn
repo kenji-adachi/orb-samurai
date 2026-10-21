@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b6ea16b0uy4rm"]
+
+[ext_resource type="Texture2D" uid="uid://hm44i0pl0aij" path="res://UI/MainMenu/SamuraiMainMenuBackgroundNonAnimated.png" id="1_3rkbw"]
+[ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="2_ulv2y"]
+[ext_resource type="PackedScene" uid="uid://cwamujttsxgvh" path="res://Core/Enemy/enemy.tscn" id="3_cx325"]
+[ext_resource type="PackedScene" uid="uid://vwdxliu34di4" path="res://Core/Player/player.tscn" id="4_4d6q1"]
+[ext_resource type="PackedScene" uid="uid://d0d00kkpa18ii" path="res://Core/GameBall/GameBall.tscn" id="5_3igfy"]
+
+[node name="CoverScene" type="Node2D" unique_id=2003466130]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=393491513]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3rkbw")
+
+[node name="Label" type="Label" parent="." unique_id=1034554581]
+use_parent_material = true
+offset_left = 66.0
+offset_top = 36.0
+offset_right = 256.0
+offset_bottom = 76.0
+theme = ExtResource("2_ulv2y")
+theme_override_colors/font_color = Color(0.7680723, 0.6911754, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8666667)
+theme_override_colors/font_outline_color = Color(0.4296193, 4.2716042e-07, 1.6845763e-07, 1)
+theme_override_font_sizes/font_size = 40
+text = "ORB SAMURAI"
+
+[node name="Enemy" parent="." unique_id=2094694508 instance=ExtResource("3_cx325")]
+position = Vector2(85.99999, 116.000015)
+rotation = 0.17996031
+scale = Vector2(5.093618, 5.093618)
+
+[node name="Player" parent="." unique_id=2127532797 instance=ExtResource("4_4d6q1")]
+position = Vector2(240, 131.00002)
+rotation = -0.28780332
+scale = Vector2(4.3507833, 4.3507833)
+
+[node name="AnimatedSprite2D" parent="Player" index="2" unique_id=1191709835]
+animation = &"slash"
+frame = 1
+frame_progress = 0.0
+
+[node name="GameBall" parent="." unique_id=1923814879 instance=ExtResource("5_3igfy")]
+position = Vector2(170, 107)
+scale = Vector2(6.310257, 6.310257)
+
+[editable path="Player"]
