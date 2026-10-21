@@ -9,6 +9,8 @@ extends Node
 @onready var colorFilter = $CanvasModulate
 @onready var playerCoreScene = preload("uid://c6uo7r5ra3ok2")
 @onready var endGameScreen = preload("uid://kj5usds7ae6p")
+@onready var loadingScreen = preload("uid://c66tdwq2sncg2")
+@onready var loadingScreenScene = "uid://c66tdwq2sncg2"
 
 
 
@@ -54,8 +56,11 @@ const ui_reference : Dictionary = {
 }
 
 func _ready():
-	initialize_game()
 	initialize_connections()
+	load_level_scene(loadingScreenScene)
+
+func game_loaded_run_first():
+	initialize_game()
 	colorFilter.color = NIGHT_COLOR
 
 
@@ -81,6 +86,7 @@ func initialize_connections():
 	EventBus.challenge.connect(_on_challenge_start)
 	EventBus.save_reset.connect(_on_save_reset)
 	StateMachine.state_changed.connect(_on_state_changed)
+	EventBus.assets_loaded.connect(_on_assets_loaded)
 	
 
 #player core runs everything related to the player and the ball
@@ -210,3 +216,6 @@ func _on_save_reset():
 	highest_level = SaveManager.save_data.highest_level
 	StateMachine.game_won = game_complete
 	load_ui_scene(ui_reference["mainMenu"])
+
+func _on_assets_loaded():
+	game_loaded_run_first()

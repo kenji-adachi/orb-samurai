@@ -38,3 +38,6 @@ signal challenge
 
 #Reset Save
 signal save_reset
+
+#Load Assets
+signal assets_loaded
