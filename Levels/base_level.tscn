@@ -6,6 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://bkflyobxcamqk" path="res://UI/LevelUI/level_lost_ui.tscn" id="4_ruyyf"]
 [ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="5_j3xrb"]
 [ext_resource type="Theme" uid="uid://bvj5cx2jg5kee" path="res://Resources/main_theme.tres" id="5_m1e4t"]
+[ext_resource type="Texture2D" uid="uid://cx1nsitciqu8o" path="res://Resources/Asssets/large_ui_tilemap.png" id="7_5y487"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufmk8"]
+atlas = ExtResource("7_5y487")
+region = Rect2(165, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ucym"]
+texture = SubResource("AtlasTexture_ufmk8")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(1, 1, 1, 0.44705883)
 
 [node name="BaseLevel" type="Node2D" unique_id=181910146]
 script = ExtResource("1_n4mxg")
@@ -48,12 +61,13 @@ text = "- Click to Start -"
 
 [node name="Unstuck" type="Button" parent="." unique_id=1065820522]
 material = ExtResource("5_j3xrb")
-offset_left = 283.0
+offset_left = 282.0
 offset_top = 155.0
-offset_right = 320.0
-offset_bottom = 180.0
+offset_right = 319.0
+offset_bottom = 179.0
 theme = ExtResource("5_m1e4t")
 theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxTexture_5ucym")
 text = "Unstuck"
 
 [node name="LevelName" type="Label" parent="." unique_id=1808785625]

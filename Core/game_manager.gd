@@ -153,9 +153,13 @@ func _on_level_lost():
 	level_transition()
 
 func _on_level_retry(currentLevel: String):
-	var level_index = level_reference.find_key(currentLevel)
-	load_player_core()
-	load_level_scene(level_reference[level_index])
+	if currentLevel == challengeLevel:
+		load_player_core()
+		load_level_scene(challengeLevel)
+	else:
+		var level_index = level_reference.find_key(currentLevel)
+		load_player_core()
+		load_level_scene(level_reference[level_index])
 	StateMachine.change_state(StateMachine.State.WAITING)
 
 func _on_level_changed(currentLevel: String):
@@ -175,6 +179,7 @@ func _on_level_changed(currentLevel: String):
 		SaveManager.save_game()
 		
 	else: # go to next level
+		await get_tree().process_frame
 		current_level_index = level_index + 1
 		load_player_core()
 		update_time_of_day(level_index + 1)

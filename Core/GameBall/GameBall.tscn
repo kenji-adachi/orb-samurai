@@ -184,6 +184,7 @@ max_polyphony = 2
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1921716822]
 position = Vector2(2.9802322e-08, -2.3841858e-07)
 scale = Vector2(0.93750006, 0.93749994)
+color = Color(0.1473485, 0.8200285, 0.73152167, 1)
 texture = SubResource("GradientTexture2D_aymfs")
 texture_scale = 0.1
 

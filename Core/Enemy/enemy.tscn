@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://bcjm72npoebtv" path="res://Core/Enemy/art/enemy.gdshader" id="2_1y6qf"]
 [ext_resource type="PackedScene" uid="uid://db5x5fcjtrbnm" path="res://Core/Components/health_component.tscn" id="3_1coru"]
 [ext_resource type="AudioStream" uid="uid://c5k3qmisrudh8" path="res://Resources/Sounds/SFX/platesHit9.ogg" id="5_pqhtm"]
+[ext_resource type="Material" uid="uid://h6gmiarq13q3" path="res://Resources/Lighting/unshadedMaterial.tres" id="6_5ucym"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1coru"]
 shader = ExtResource("2_1y6qf")
@@ -164,30 +165,17 @@ _data = {
 &"dropItem": SubResource("Animation_ufmk8")
 }
 
-[sub_resource type="Gradient" id="Gradient_pqhtm"]
-offsets = PackedFloat32Array(0, 0.30120483, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.93373495, 0.93373495, 0.93373495, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_skrjv"]
-gradient = SubResource("Gradient_pqhtm")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="Gradient" id="Gradient_244pw"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pqhtm"]
-gradient = SubResource("Gradient_244pw")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wgabf"]
 blend_mode = 1
 light_mode = 1
 
+[sub_resource type="Curve" id="Curve_ufmk8"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_s1lpj"]
+curve = SubResource("Curve_ufmk8")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skrjv"]
 particle_flag_disable_z = true
@@ -206,6 +194,9 @@ damping_min = 10.0
 damping_max = 50.000004
 color = Color(0.9875, 1, 0.85, 0.7529412)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_skrjv"]
+light_mode = 1
+
 [node name="Enemy" type="CharacterBody2D" unique_id=2094694508 groups=["Enemies"]]
 collision_layer = 8
 collision_mask = 2
@@ -217,14 +208,13 @@ instance_shader_parameters/flash_percentage = 0.0
 texture = ExtResource("1_apucl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1663796793]
+visible = false
 shape = SubResource("RectangleShape2D_ah4ou")
-
-[node name="Item" type="Sprite2D" parent="." unique_id=1409613477]
-position = Vector2(-5, 4)
 
 [node name="HealthComponent" parent="." unique_id=543719739 instance=ExtResource("3_1coru")]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=132584532]
+visible = false
 collision_layer = 64
 collision_mask = 2
 
@@ -240,23 +230,6 @@ libraries/ = SubResource("AnimationLibrary_2hg5x")
 [node name="BodyHitSFX" type="AudioStreamPlayer2D" parent="." unique_id=1888501188]
 stream = ExtResource("5_pqhtm")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1454852679]
-position = Vector2(-2.5, -2.5)
-scale = Vector2(0.015625002, 0.015625002)
-color = Color(0.94036186, 5.3425133e-06, 3.85046e-07, 1)
-texture = SubResource("GradientTexture2D_skrjv")
-
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1727033082]
-position = Vector2(2.5, -2.5)
-scale = Vector2(0.015624998, 0.015624998)
-color = Color(0.94036186, 5.3425133e-06, 3.85046e-07, 1)
-texture = SubResource("GradientTexture2D_skrjv")
-
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=516350438]
-color = Color(0.46, 0, 0, 1)
-texture = SubResource("GradientTexture2D_pqhtm")
-texture_scale = 0.3
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=482672325]
 material = SubResource("CanvasItemMaterial_wgabf")
 emitting = false
@@ -265,6 +238,36 @@ lifetime = 0.2
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_skrjv")
+
+[node name="Ambiance" type="Node2D" parent="." unique_id=934780099]
+material = SubResource("CanvasItemMaterial_skrjv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ambiance" unique_id=692230836]
+modulate = Color(0.64, 0.1536, 0.1536, 0.10980392)
+use_parent_material = true
+texture = ExtResource("1_apucl")
+
+[node name="GlowingEyes" type="Node2D" parent="." unique_id=605523389]
+modulate = Color(18.892157, 0, 0, 1)
+material = ExtResource("6_5ucym")
+
+[node name="Sprite2D2" type="Sprite2D" parent="GlowingEyes" unique_id=956967730]
+use_parent_material = true
+position = Vector2(-2.5, -2.5)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_apucl")
+region_enabled = true
+region_rect = Rect2(5, 5, 1, 1)
+
+[node name="Sprite2D3" type="Sprite2D" parent="GlowingEyes" unique_id=1787859455]
+use_parent_material = true
+position = Vector2(2.5, -2.5)
+texture = ExtResource("1_apucl")
+region_enabled = true
+region_rect = Rect2(5, 5, 1, 1)
+
+[node name="Item" type="Sprite2D" parent="." unique_id=1409613477]
+position = Vector2(-5, 4)
 
 [connection signal="dead" from="HealthComponent" to="." method="_on_health_component_dead"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
