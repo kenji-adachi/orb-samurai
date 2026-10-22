@@ -8,13 +8,21 @@ const ballScene : PackedScene = preload("uid://d0d00kkpa18ii")
 @onready var ballSpawn = $Player/BallSpawn
 @onready var crosshair = $Crosshair
 @onready var aimLine = $AimLine
-@onready var ball = null
+@onready var mobile_ui = $MobileControls
+
 var ballForming = false
+var ball = null
 
 
 func _ready():
 	EventBus.spawn_ball.connect(_on_spawn_ball)
 	Accesability.playerLocation = player.global_position
+	
+	if mobile_ui and OS.has_feature("mobile") or OS.has_feature("web_android") or OS.has_feature("web_ios"):
+		var touch_zone = mobile_ui.get_node_or_null("AimTouchZone")
+		if touch_zone:
+			touch_zone.aim_touch_triggered.connect(crosshair.update_from_mobile_touch)
+
 
 func _process(delta):
 	Accesability.playerLocation = player.global_position
