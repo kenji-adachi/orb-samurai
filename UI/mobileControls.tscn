@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bs0ai0o5f12n3"]
+
+[ext_resource type="Script" uid="uid://1k8c84eamire" path="res://UI/mobile_controls.gd" id="1_36l0x"]
+[ext_resource type="Texture2D" uid="uid://dnwye2b4fi1im" path="res://Resources/Asssets/style-a-default.png" id="1_nc6kk"]
+[ext_resource type="Texture2D" uid="uid://0xm6m2o2asqa" path="res://Resources/Asssets/highlights-a-default.png" id="2_258al"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4yfl"]
+atlas = ExtResource("1_nc6kk")
+region = Rect2(554, 396, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_258al"]
+atlas = ExtResource("2_258al")
+region = Rect2(326, 296, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc6kk"]
+atlas = ExtResource("1_nc6kk")
+region = Rect2(522, 588, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36l0x"]
+atlas = ExtResource("2_258al")
+region = Rect2(326, 362, 64, 64)
+
+[node name="MobileControls" type="Node2D" unique_id=795229147]
+script = ExtResource("1_36l0x")
+
+[node name="TouchScreenControls" type="CanvasLayer" parent="." unique_id=1605205834]
+
+[node name="LeftButton" type="TouchScreenButton" parent="TouchScreenControls" unique_id=1465997887]
+position = Vector2(17, 147)
+scale = Vector2(0.28125, 0.28125)
+texture_normal = SubResource("AtlasTexture_p4yfl")
+texture_pressed = SubResource("AtlasTexture_258al")
+passby_press = true
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="TouchScreenControls" unique_id=1456430929]
+position = Vector2(52.000004, 147)
+scale = Vector2(0.28125, 0.28125)
+texture_normal = SubResource("AtlasTexture_nc6kk")
+texture_pressed = SubResource("AtlasTexture_36l0x")
+passby_press = true
+action = "right"

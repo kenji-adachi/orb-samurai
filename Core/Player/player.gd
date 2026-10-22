@@ -17,33 +17,33 @@ func _ready():
 	playerSprite.play("idle")
 
 
-func _input(event):
-	if event is InputEventKey:
-		if event.is_action_pressed("right"):
-			if currentAction == "left":
-				currentAction = "none"
-			else:
-				currentAction = "right"
-		elif event.is_action_pressed("left"):
-			if currentAction == "right":
-				currentAction = "none"
-			else:
-				currentAction = "left"
-		if event.is_action_released("left") and currentAction == "none":
-			currentAction = "right"
-		elif event.is_action_released("left") and currentAction == "left":
-			currentAction = "none"
-		if event.is_action_released("right") and currentAction == "none":
-			currentAction = "left"
-		elif event.is_action_released("right") and currentAction == "right":
-			currentAction = "none"
-		match currentAction:
-			"none":
-				stopMovement()
-			"left":
-				moveLeft()
-			"right":
-				moveRight()
+#func _input(event):
+	#if event is InputEventKey:
+		#if event.is_action_pressed("right"):
+			#if currentAction == "left":
+				#currentAction = "none"
+			#else:
+				#currentAction = "right"
+		#elif event.is_action_pressed("left"):
+			#if currentAction == "right":
+				#currentAction = "none"
+			#else:
+				#currentAction = "left"
+		#if event.is_action_released("left") and currentAction == "none":
+			#currentAction = "right"
+		#elif event.is_action_released("left") and currentAction == "left":
+			#currentAction = "none"
+		#if event.is_action_released("right") and currentAction == "none":
+			#currentAction = "left"
+		#elif event.is_action_released("right") and currentAction == "right":
+			#currentAction = "none"
+		#match currentAction:
+			#"none":
+				#stopMovement()
+			#"left":
+				#moveLeft()
+			#"right":
+				#moveRight()
 
 
 func slash():
@@ -62,20 +62,26 @@ func damage(amount: float):
 
 
 func _physics_process(delta):
+	var direction = Input.get_axis("left", "right")
+	
+	if direction != 0:
+		velocity.x = direction * playerSpeed
+	else:
+		velocity.x = 0
 	move_and_slide()
 
 
 func _on_area_2d_body_entered(body):
 	slash()
 
-func moveLeft():
-	velocity.x = -playerSpeed
-
-func moveRight():
-	velocity.x = playerSpeed
-
-func stopMovement():
-	velocity.x = 0
+#func moveLeft():
+	#velocity.x = -playerSpeed
+#
+#func moveRight():
+	#velocity.x = playerSpeed
+#
+#func stopMovement():
+	#velocity.x = 0
 	
 func rotatePlayer(directionVector: Vector2):
 	look_at(directionVector)
